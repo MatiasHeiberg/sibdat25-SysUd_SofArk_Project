@@ -8,22 +8,16 @@ sections:
 
 ## Indledning
 
-![[Dummy Note 4]]
-
 ## Arbejdsmetode
 
-![[Dummy note 5 (excluded)]]
-
 ## Analyse
-
-![[Dummy note]]
-
-![[Dummy note 3]]
-
-![[Dummy note 2]]
 
 ---
 ## ⚠️ Usorterede / Nye Sektioner
 
-![[Dummy note 1]] *(Fundet sektion: None / Tom)*
+![[Svar fra Klient]] *(Fundet sektion: Klient-kommunikation)*
+
+![[Inception]] *(Fundet sektion: Inception)*
+
+![[Opstartsplan]] *(Fundet sektion: Inception)*
 
