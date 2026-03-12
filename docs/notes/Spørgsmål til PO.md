@@ -14,3 +14,4 @@ sortKey: 0.4311
 - [[Bliver en borger besøgt mere end en gang dagligt]]
 - [[Er borgerlisten ens hver dag]]
 - [[Er en borgers antal besøg variabel]]
+- [[Hvordan fungerer det at bruge Outlook til koordinering]]
