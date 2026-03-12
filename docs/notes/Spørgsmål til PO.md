@@ -4,7 +4,7 @@ section: Process
 exclude: false
 sortKey: 0.4311
 ---
-## 03/12 - torsdag
+## 3. marts - torsdag
 - [[Bostøtte vs botilbud]]
 - [[Hvad er retningslinjerne]]
 - [[Koordinering mellem kollegaer og/eller beboer]]
@@ -14,3 +14,4 @@ sortKey: 0.4311
 - [[Bliver en borger besøgt mere end en gang dagligt]]
 - [[Er borgerlisten ens hver dag]]
 - [[Er en borgers antal besøg variabel]]
+- [[Hvordan fungerer det at bruge Outlook til koordinering]]

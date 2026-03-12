@@ -5,42 +5,38 @@ exclude: false
 sortKey: 0.44368
 ---
 ```mermaid
-classDiagram  
-  
-class Medarbejder {   
-koordinerer
-}  
-  
-class Transport {   
-}  
-  
-class Borger {  
-}  
+classDiagram
 
-class Booking {  
-}  
+class Medarbejder
+class Transport
+class Borger
+class Booking
+class Bostøtte
+class Botilbud
+class Retningslinjer
+class Borgerliste
+class Bil
+class Cykel
+class Outlook
+class Privatbil
 
-class Bostøtte {  
-}  
+Bil -- Transport
+Cykel -- Transport
 
-class Botilbud {  
-} 
-
-class Retningslinjer {  
-}
-
-class Borgerliste {  
-}
-
-
-Medarbejder  --  Transport : bruger
+Transport -- Booking : har
+Medarbejder -- Transport : bruger
 Medarbejder -- Borger : besøger
-Medarbejder -- Booking : laver(outlook)
-Medarbejder "14"-- "1" Bostøtte : er
-Medarbejder -- Botilbud : ansat
-Botilbud -- Bostøtte : tilbyder
-Booking -- Transport : har
+Medarbejder -- Booking : laver
 Booking -- Retningslinjer : har
-Medarbejder "1" -->  "1" Borgerliste : har
-Borger "1..*" -- "1..*" Borgerliste : på
+Booking -- Outlook : bruger
+
+Medarbejder "14" -- "1" Bostøtte : er
+Medarbejder -- Botilbud : ansat
+Bostøtte -- Botilbud : tilbyder
+Bostøtte -- Privatbil : bruger
+
+Medarbejder -- Borgerliste : har
+Borgerliste "1..*" -- "1..*" Borger : på
 ```
+
+![[12321.jpg]]
