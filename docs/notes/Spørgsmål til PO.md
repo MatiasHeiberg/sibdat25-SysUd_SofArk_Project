@@ -4,7 +4,7 @@ section: Process
 exclude: false
 sortKey: 0.4311
 ---
-## 03/12 - torsdag
+## 3. marts - torsdag
 - [[Bostøtte vs botilbud]]
 - [[Hvad er retningslinjerne]]
 - [[Koordinering mellem kollegaer og/eller beboer]]
