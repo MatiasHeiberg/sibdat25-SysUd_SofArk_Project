@@ -1,0 +1,45 @@
+{
+  "confirmDeletion": true,
+  "showAddCommand": true,
+  "debug": false,
+  "editorMenu": [],
+  "fileMenu": [],
+  "leftRibbon": [
+    {
+      "id": "templater-obsidian:docs/templates/update_draft.md",
+      "icon": "lucide-hammer",
+      "name": "Build draft",
+      "mode": "any"
+    },
+    {
+      "id": "obsidian-citation-plugin:insert-markdown-citation",
+      "icon": "lucide-quote",
+      "name": "Citations: Insert Markdown citation",
+      "mode": "any"
+    }
+  ],
+  "rightRibbon": [],
+  "titleBar": [],
+  "statusBar": [],
+  "pageHeader": [],
+  "macros": [],
+  "explorer": [],
+  "hide": {
+    "statusbar": [],
+    "leftRibbon": [
+      "Templater",
+      "Create new base"
+    ]
+  },
+  "spacing": 8,
+  "advancedToolbar": {
+    "rowHeight": 48,
+    "rowCount": 1,
+    "spacing": 0,
+    "buttonWidth": 48,
+    "columnLayout": false,
+    "mappedIcons": [],
+    "tooltips": false,
+    "heightOffset": 0
+  }
+}
