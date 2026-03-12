@@ -30,7 +30,9 @@ views:
         direction: DESC
     summaries: {}
     columnSize:
-      file.name: 192
+      file.name: 144
+      note.sortKey: 68
+      note.section: 146
   - type: table
     name: Daily Log
     filters:
