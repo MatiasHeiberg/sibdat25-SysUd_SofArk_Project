@@ -1,23 +1,36 @@
 ---
 is_draft: true 
-sections: 
-  - Indledning 
-  - Arbejdsmetode 
-  - Analyse 
 ---
 
-## Indledning
+## Inception
 
-## Arbejdsmetode
+![[Inception]]
 
-## Analyse
+![[Opstartsplan]]
 
----
-## ⚠️ Usorterede / Nye Sektioner
+![[Ordanalyse]]
 
-![[Svar fra Klient]] *(Fundet sektion: Klient-kommunikation)*
+![[Domænemodel]]
 
-![[Inception]] *(Fundet sektion: Inception)*
+![[Use Cases]]
 
-![[Opstartsplan]] *(Fundet sektion: Inception)*
+![[Pain vs Gain]]
+
+![[Tanker over Use Cases]]
+
+## Klient-kommunikation
+
+![[Svar fra Klient]]
+
+## Process
+
+![[Spørgsmål til PO]]
+
+## Refleksion
+
+![[Domænemodel før Use Cases]]
+
+## Reflektion
+
+![[Brug af AI til Use cases]]
 

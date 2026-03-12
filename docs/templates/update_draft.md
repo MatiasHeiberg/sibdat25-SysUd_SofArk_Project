@@ -37,7 +37,6 @@ if (sectionOrder.length === 0) {
 // 4. Hent alle "atomic notes" uanset hvor de ligger i systemet.
 // Vi filtrerer filer fra, der slet ikke er en del af Bases-systemet.
 let notesPerSection = {};
-let orphanNotes = [];
 
 for (let file of allFiles) {
     if (file.path === draftFile.path) continue; // Spring selve Draft-noten over
@@ -48,27 +47,33 @@ for (let file of allFiles) {
     if (noteCache?.frontmatter?.exclude === true) continue;
 
     const section = noteCache?.frontmatter?.section;
+
+    // Hvis noten ikke har en section property, skal den slet ikke inkluderes.
+    if (!section || typeof section !== 'string' || section.trim().length === 0) continue;
+
     const sortKey = parseFloat(noteCache?.frontmatter?.sortKey);
-
-    // Hvis noten HVERKEN har en section eller et sortKey, er det nok en template eller en tilfældig note. Den ignorerer vi.
-    if (section === undefined && isNaN(sortKey)) continue;
-
     const safeSortKey = isNaN(sortKey) ? 999 : sortKey;
     const noteObj = { name: file.basename, sortKey: safeSortKey, section: section };
 
     // Sorter i den rigtige spand
-    if (section && sectionOrder.includes(section)) {
-        if (!notesPerSection[section]) notesPerSection[section] = [];
-        notesPerSection[section].push(noteObj);
-    } else {
-        orphanNotes.push(noteObj);
-    }
+    if (!notesPerSection[section]) notesPerSection[section] = [];
+    notesPerSection[section].push(noteObj);
 }
 
 // 5. Byg den nye tekst (start med at indsætte den fredede YAML-boks)
 let newText = yamlBlock + "\n\n";
 
-for (let currentSection of sectionOrder) {
+// Filtrer sectionOrder for sektioner der faktisk har noter (fjerner ubrugte gamle overskrifter)
+const activeOrderedSections = sectionOrder.filter(sec => notesPerSection[sec] && notesPerSection[sec].length > 0);
+
+// Find sektioner der findes i noterne, men ikke i sectionOrder (nye sektioner)
+const newSections = Object.keys(notesPerSection).filter(sec => !sectionOrder.includes(sec));
+newSections.sort(); // Sorter de nye sektioner alfabetisk
+
+// Saml den endelige liste: Først de kendte (sorteret efter ønsket rækkefølge), så de nye
+const finalSectionList = [...activeOrderedSections, ...newSections];
+
+for (let currentSection of finalSectionList) {
     newText += `## ${currentSection}\n\n`;
     let notes = notesPerSection[currentSection] || [];
     
@@ -77,16 +82,6 @@ for (let currentSection of sectionOrder) {
 
     for (let note of notes) {
         newText += `![[${note.name}]]\n\n`;
-    }
-}
-
-// 6. Tilføj eventuelle usorterede/None noter i bunden som et sikkerhedsnet
-if (orphanNotes.length > 0) {
-    newText += `---\n## ⚠️ Usorterede / Nye Sektioner\n\n`;
-    orphanNotes.sort((a, b) => a.sortKey - b.sortKey);
-    for (let note of orphanNotes) {
-        const displaySection = note.section ? note.section : "None / Tom";
-        newText += `![[${note.name}]] *(Fundet sektion: ${displaySection})*\n\n`;
     }
 }
 
