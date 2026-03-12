@@ -10,7 +10,10 @@ Vi arbejder ud fra klients første domænebeskrivelse.
 
 Vi diskuterer, om 1-3 iterationer er realistisk i projektet. 
 
-Dagen i dag:
+### Inception oversigt
+
+^1c3ba6
+
 - OOA
 - Domænemodel
 - Krav-workshop - Use Case Model
