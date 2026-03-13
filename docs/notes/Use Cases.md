@@ -4,24 +4,24 @@ section: Inception
 exclude: false
 sortKey: 0.50019
 ---
-| **ID**   | **Navn**                                           | **Brief** |
-| -------- | -------------------------------------------------- | --------- |
-| **UC1**  | Se oversigt over bookinger                         |           |
-| **UC2**  | Se ledige transportmidler for et bestemt tidspunkt |           |
-| **UC3**  | Book transportmiddel                               |           |
-| **UC4**  | Ændre booking                                      |           |
-| **UC5**  | Annullere booking                                  |           |
-| **UC6**  | Registrer brug af privatbil                        |           |
-| **UC7**  | Se hvilke medarbejdere der er på arbejde           |           |
-| **UC8**  | Tilføj medarbejder                                 |           |
-| **UC9**  | Fjern medarbejder                                  |           |
-| **UC10** | Se borgerliste / dagens besøg                      |           |
-| **UC11** | Planlæg rækkefølge af besøg                        |           |
-| **UC12** | Registrer borger-deling                            |           |
-| **UC13** | Overdrag borger til kollega                        |           |
-| **UC14** | Opsæt booking-retningslinjer                       |           |
-| **UC15** | Administrer transportmidler                        |           |
+En aktør, mål og systemets ansvar
 
+| **ID**   | **Navn**                                           | **Brief**                                                                                             |
+| -------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **UC1**  | Se oversigt over bookinger                         | En medarbejder tilgår systemet og kan se oversigt over transport-bookinger.                           |
+| **UC2**  | Se ledige transportmidler for et bestemt tidspunkt | En medarbejder tilgår systemet, vælger et ønsket tidspunkt, og systemet viser ledige transportmidler. |
+| **UC3**  | Book transportmiddel                               | En medarbejder tilgår systemet og booker et ledigt transportmiddel i et givent tidspunkt.             |
+| **UC4**  | Ændre booking                                      | En medarbejder tilgår egen booking og redigerer bookingdetaljer.                                      |
+| **UC5**  | Annullere booking                                  | En medarbejder annullerer egen booking                                                                |
+| **UC6**  | Registrer brug af privatbil                        | En medarbejder registrerer egen bil i systemet i et givent tidsrum                                    |
+| **UC7**  | Se hvilke medarbejdere der er på arbejde           | En medarbejder kan se status på dagens booking-ejere                                                  |
+| **UC8**  | Ajourfør medarbejder                               | Systemet modtager opdateret medarbejderliste fra Nexus                                                |
+| **UC9**  | Se borgerliste / dagens besøg                      |                                                                                                       |
+| **UC10** | Planlæg rækkefølge af besøg                        |                                                                                                       |
+| **UC11** | Registrer borger-deling                            |                                                                                                       |
+| **UC12** | Overdrag borger til kollega                        |                                                                                                       |
+| **UC13** | Opsæt booking-retningslinjer                       |                                                                                                       |
+| **UC14** | Administrer transportmidler                        |                                                                                                       |
 > [!NOTE]-
 > [https://gemini.google.com/share/b5175280a06e](https://gemini.google.com/share/b5175280a06e "https://gemini.google.com/share/b5175280a06e")
 > ### 🚲 Håndtering af Transport & Booking
