@@ -15,3 +15,4 @@ sortKey: 0.4311
 - [[Er borgerlisten ens hver dag]]
 - [[Er en borgers antal besøg variabel]]
 - [[Hvordan fungerer det at bruge Outlook til koordinering]]
+- [[Har i en fast tidsramme for hvert besøg]]

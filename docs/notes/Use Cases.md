@@ -4,23 +4,23 @@ section: Inception
 exclude: false
 sortKey: 0.50019
 ---
-|**ID**|**Navn**|**Brief**|
-|---|---|---|
-|**UC1**|Se oversigt over bookinger||
-|**UC2**|Se ledige transportmidler for et bestemt tidspunkt||
-|**UC3**|Book transportmiddel||
-|**UC4**|Ændre booking||
-|**UC5**|Annullere booking||
-|**UC6**|Registrer brug af privatbil||
-|**UC7**|Se hvilke medarbejdere der er på arbejde||
-|**UC8**|Tilføj medarbejder||
-|**UC9**|Fjern medarbejder||
-|**UC10**|Se borgerliste / dagens besøg||
-|**UC11**|Planlæg rækkefølge af besøg||
-|**UC12**|Registrer borger-deling||
-|**UC13**|Overdrag borger til kollega||
-|**UC14**|Opsæt booking-retningslinjer||
-|**UC15**|Administrer transportmidler||
+| **ID**   | **Navn**                                           | **Brief** |
+| -------- | -------------------------------------------------- | --------- |
+| **UC1**  | Se oversigt over bookinger                         |           |
+| **UC2**  | Se ledige transportmidler for et bestemt tidspunkt |           |
+| **UC3**  | Book transportmiddel                               |           |
+| **UC4**  | Ændre booking                                      |           |
+| **UC5**  | Annullere booking                                  |           |
+| **UC6**  | Registrer brug af privatbil                        |           |
+| **UC7**  | Se hvilke medarbejdere der er på arbejde           |           |
+| **UC8**  | Tilføj medarbejder                                 |           |
+| **UC9**  | Fjern medarbejder                                  |           |
+| **UC10** | Se borgerliste / dagens besøg                      |           |
+| **UC11** | Planlæg rækkefølge af besøg                        |           |
+| **UC12** | Registrer borger-deling                            |           |
+| **UC13** | Overdrag borger til kollega                        |           |
+| **UC14** | Opsæt booking-retningslinjer                       |           |
+| **UC15** | Administrer transportmidler                        |           |
 
 > [!NOTE]-
 > [https://gemini.google.com/share/b5175280a06e](https://gemini.google.com/share/b5175280a06e "https://gemini.google.com/share/b5175280a06e")
