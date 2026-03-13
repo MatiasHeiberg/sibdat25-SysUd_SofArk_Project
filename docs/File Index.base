@@ -30,7 +30,7 @@ views:
       - section
     sort:
       - property: sortKey
-        direction: DESC
+        direction: ASC
       - property: file.name
         direction: DESC
     summaries: {}
