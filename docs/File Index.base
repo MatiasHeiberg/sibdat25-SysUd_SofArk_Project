@@ -1,3 +1,5 @@
+formulas:
+  Priority: ""
 views:
   - type: list
     name: All Files
@@ -48,3 +50,11 @@ views:
         direction: ASC
     columnSize:
       file.name: 282
+  - type: table
+    name: Risk list
+    filters:
+      and:
+        - file.hasProperty("risici")
+    order:
+      - file.name
+      - formula.Priority
