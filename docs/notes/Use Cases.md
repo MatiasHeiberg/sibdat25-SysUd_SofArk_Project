@@ -8,7 +8,7 @@ En aktør, mål og systemets ansvar
 
 | **ID**   | **Navn**                                           | **Brief**                                                                                                                                             |
 | -------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **UC1**  | Se oversigt over bookinger                         | En medarbejder tilgår systemet og kan se oversigt over transport-bookinger.                                                                           |
+| **UC1**  | [[Se oversigt over bookinger]]                     | En medarbejder tilgår systemet og kan se oversigt over transport-bookinger.                                                                           |
 | **UC2**  | Se ledige transportmidler for et bestemt tidspunkt | En medarbejder tilgår systemet, vælger et ønsket tidspunkt, og systemet viser ledige transportmidler.                                                 |
 | **UC3**  | Book transportmiddel                               | En medarbejder tilgår systemet og booker et ledigt transportmiddel i et givent tidspunkt.                                                             |
 | **UC4**  | Ændre booking                                      | En medarbejder tilgår egen booking og redigerer bookingdetaljer.                                                                                      |
