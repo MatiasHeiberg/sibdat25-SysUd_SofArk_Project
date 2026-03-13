@@ -1,6 +1,6 @@
 ---
 created: 2026-03-12
-section: Reflektion
+section: Refleksion
 exclude: false
 sortKey: 0.5048
 ---
