@@ -1,5 +1,8 @@
 formulas:
-  Priority: ""
+  Priority: number(risici) * number(customerValue)
+properties:
+  formula.Priority:
+    displayName: priority
 views:
   - type: list
     name: All Files
@@ -51,10 +54,16 @@ views:
     columnSize:
       file.name: 282
   - type: table
-    name: Risk list
+    name: Risk List
     filters:
       and:
         - file.hasProperty("risici")
     order:
       - file.name
       - formula.Priority
+    sort:
+      - property: formula.Priority
+        direction: DESC
+    columnSize:
+      file.name: 276
+      formula.Priority: 95
