@@ -11,3 +11,8 @@ Vores system kan måske ikke skabe gains, men snarere reliefe pains (Medarbejder
 Visionen for vores projekt er at gøre det nemmere at koordinere transportmidlerne. 
 
 Administration og håndtering af borgerbesøg er sekundært (Håndteringen af borgerbesøg/borgerliste i forhold til transportbooking er en stærkere og langt mere kompliceret løsning, der i dette projekt ligger uden for scope.)
+
+## Brief
+* Fokus på at der skal være en aktør, et mål og systemets ansvar.
+* De bliver holdt så neutrale som muligt for ikke at træffe nogle arkitektur beslutninger (eks, computerskærm, på mobil osv. undlades) da dette ikke er blevet specificeret fra PO.
+* Tilføj/fjern medarbejder Use Cases bliver sammenskrevet til een, og medarbejder data kommer i stedet udefra.
