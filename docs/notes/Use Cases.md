@@ -10,16 +10,16 @@ En aktør, mål og systemets ansvar
 | -------- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **UC1**  | [[Se oversigt over bookinger]]                         | En medarbejder tilgår systemet og kan se oversigt over transport-bookinger.                                                                           |
 | **UC2**  | [[Se ledige transportmidler for et bestemt tidspunkt]] | En medarbejder tilgår systemet, vælger et ønsket tidspunkt, og systemet viser ledige transportmidler.                                                 |
-| **UC3**  | Book transportmiddel                                   | En medarbejder tilgår systemet og booker et ledigt transportmiddel i et givent tidspunkt.                                                             |
-| **UC4**  | Ændre booking                                          | En medarbejder tilgår egen booking og redigerer bookingdetaljer.                                                                                      |
-| **UC5**  | Annullere booking                                      | En medarbejder annullerer egen booking.                                                                                                               |
-| **UC6**  | Registrer brug af privatbil                            | En medarbejder registrerer egen bil i systemet i et givent tidsrum.                                                                                   |
-| **UC7**  | Se hvilke medarbejdere der er på arbejde               | En medarbejder kan se status på dagens booking-ejere.                                                                                                 |
-| **UC8**  | Ajourfør medarbejder                                   | Systemet modtager opdateret medarbejderliste fra Nexus.                                                                                               |
-| **UC9**  | Se borgerliste / dagens besøg                          | En medarbejder kan se egen borgerliste og dagens besøg.                                                                                               |
-| **UC10** | Planlæg rækkefølge af besøg                            | Systemet sammenligner besøgslister ud fra dato, borgerens adresse og koordinerer en optimal besøgsrækkefølge.                                         |
-| **UC11** | Overdrag borger til kollega                            | Systemet modtager en ajourført medarbejderliste, som indeholder en syg medarbejder. Systemet fordeler den syges borger til kollegaernes besøgslister. |
-| **UC12** | Administrer transportmidler                            | Administrativ medarbejder åbner systemet og administrerer transportmidlerne.                                                                          |
+| **UC3**  | [[Book transportmiddel]]                               | En medarbejder tilgår systemet og booker et ledigt transportmiddel i et givent tidspunkt.                                                             |
+| **UC4**  | [[Ændre booking]]                                      | En medarbejder tilgår egen booking og redigerer bookingdetaljer.                                                                                      |
+| **UC5**  | [[Annullere booking]]                                  | En medarbejder annullerer egen booking.                                                                                                               |
+| **UC6**  | [[Registrer brug af privatbil]]                        | En medarbejder registrerer egen bil i systemet i et givent tidsrum.                                                                                   |
+| **UC7**  | [[Se hvilke medarbejdere der er på arbejde]]           | En medarbejder kan se status på dagens booking-ejere.                                                                                                 |
+| **UC8**  | [[Ajourfør medarbejder]]                               | Systemet modtager opdateret medarbejderliste fra Nexus.                                                                                               |
+| **UC9**  | [[Se borgerliste el. dagens besøg]]                    | En medarbejder kan se egen borgerliste og dagens besøg.                                                                                               |
+| **UC10** | [[Planlæg rækkefølge af besøg]]                        | Systemet sammenligner besøgslister ud fra dato, borgerens adresse og koordinerer en optimal besøgsrækkefølge.                                         |
+| **UC11** | [[Overdrag borger til kollega]]                        | Systemet modtager en ajourført medarbejderliste, som indeholder en syg medarbejder. Systemet fordeler den syges borger til kollegaernes besøgslister. |
+| **UC12** | [[Administrer transportmidler]]                        | Administrativ medarbejder åbner systemet og administrerer transportmidlerne.                                                                          |
 > [!NOTE]-
 > [https://gemini.google.com/share/b5175280a06e](https://gemini.google.com/share/b5175280a06e "https://gemini.google.com/share/b5175280a06e")
 > ### 🚲 Håndtering af Transport & Booking
