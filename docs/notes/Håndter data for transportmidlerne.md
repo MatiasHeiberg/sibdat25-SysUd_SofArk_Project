@@ -4,6 +4,6 @@ section:
 exclude: false
 sortKey: 4.43726
 isTask: true
-storyPoint:
+storyPoint: "2"
 comment: Biler og cykler. Nedarvning eller interface?
 ---
