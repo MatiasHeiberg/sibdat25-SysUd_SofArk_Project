@@ -35,7 +35,7 @@ views:
         direction: DESC
     summaries: {}
     columnSize:
-      file.name: 144
+      file.name: 207
       note.sortKey: 68
       note.section: 146
   - type: table
