@@ -4,6 +4,7 @@ section:
 exclude: false
 sortKey: 4.37671
 ---
+
 Værktøjer vi har overvejet:
 - Planning poker
 - Fibonacci
