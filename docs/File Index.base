@@ -69,3 +69,14 @@ views:
     columnSize:
       file.name: 276
       formula.Priority: 95
+  - type: table
+    name: Backlog
+    filters:
+      and:
+        - isTask == true
+    order:
+      - file.name
+      - storyPoint
+      - comment
+    columnSize:
+      file.name: 358
