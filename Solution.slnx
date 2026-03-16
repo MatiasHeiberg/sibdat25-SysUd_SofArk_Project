@@ -1,4 +1,3 @@
 <Solution>
-  <Project Path="src/App.csproj" />
-  <Project Path="tests/AppTests.csproj" />
+  <Project Path="KoordineringsApp/KoordineringsApp.csproj" Id="e2e652e1-05dd-4069-b170-2e06c780a029" />
 </Solution>
