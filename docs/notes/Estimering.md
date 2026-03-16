@@ -4,6 +4,7 @@ section:
 exclude: false
 sortKey: 4.37671
 ---
+![[Pasted image 20260316112947.png]]
 Værktøjer vi har overvejet:
 - Planning poker
 - Fibonacci

@@ -1,6 +1,6 @@
 ---
 isTask: true
-storyPoint:
+storyPoint: "1"
 comment:
 created: 2026-03-16
 section:
