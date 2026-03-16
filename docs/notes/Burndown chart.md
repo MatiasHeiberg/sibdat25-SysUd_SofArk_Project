@@ -6,9 +6,20 @@ sortKey: 1.33495
 ---
 ```mermaid
 xychart-beta
-    title "Sprint Burndown Chart"
-    x-axis ["Day 1","Day 2","Day 3","Day 4","Day 5"]
-    y-axis "Remaining Story Points" 0 --> 50
-    line "Ideal" [50,40,30,20,10]
-    line "Actual" [50,45,35,25,15]
+    title "Burndown Chart"
+    x-axis "Opgaver" [
+        "Start",
+        "Tjek transport ikke optaget",
+        "Vælg tidsramme",
+        "Ugyldigt tidsrum fejl",
+        "Data transportmidler",
+        "Booket transport optaget",
+        "Filtrer status",
+        "Bruger data",
+        "Beskedservice admin",
+        "Bekræft booking",
+        "Oversigt transportmidler"
+    ]
+    y-axis "Remaining Work" 0 --> 24
+    line "Actual" [24,23,21,20,18,17,16,14,9,8,0]
 ```
