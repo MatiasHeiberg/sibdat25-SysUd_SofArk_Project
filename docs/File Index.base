@@ -78,5 +78,8 @@ views:
       - file.name
       - storyPoint
       - comment
+    sort:
+      - property: storyPoint
+        direction: ASC
     columnSize:
       file.name: 358
