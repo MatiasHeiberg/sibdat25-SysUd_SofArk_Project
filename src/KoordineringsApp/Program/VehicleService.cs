@@ -11,7 +11,7 @@ namespace KoordineringsApp.Program
             _providers = providers;
         }
 
-        public List<IVehicle> LoadVehicles()
+        public List<IVehicle> GetVehicles()
         {
             var allVehicles = new List<IVehicle>();
 
