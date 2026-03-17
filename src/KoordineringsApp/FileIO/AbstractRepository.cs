@@ -6,13 +6,9 @@ namespace KoordineringsApp.FileIO
 {
     public abstract class AbstractRepository
     {
-        private abstract string Path { get; private set; }
-        public string Load()
-        {
-            return default;
-        }
-        public void Save()
-        {
-        }
+        private readonly string _path;
+
+        protected AbstractRepository(string path) => _path = path;
+        protected string GetPath() => _path;
     }
 }
