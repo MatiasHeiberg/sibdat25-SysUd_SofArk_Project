@@ -6,5 +6,9 @@ namespace KoordineringsApp.FileIO
 {
     public class EmployeeRepository : AbstractRepository
     {
+        public EmployeeRepository(string path) : base(path)
+        {
+
+        }
     }
 }
