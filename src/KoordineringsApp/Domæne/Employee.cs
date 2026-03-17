@@ -7,13 +7,13 @@ namespace KoordineringsApp.Domæne
 {
     public class Employee
     {
-        private readonly UserRepository _repository;
+        private readonly EmployeeRepository _repository;
         public string Name { get; set; }
         public int ID { get; set; }
 
-        public Employee()
+        public Employee(EmployeeRepository repository)
         {
-            _repository = new UserRepository();
+            _repository = repository;
         }
     }
 }
