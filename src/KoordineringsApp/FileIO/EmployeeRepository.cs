@@ -4,7 +4,7 @@ using System.Text;
 
 namespace KoordineringsApp.FileIO
 {
-    public class EmployeeRepository : AbstractRepository
+    public class EmployeeRepository : FileHandler
     {
     }
 }

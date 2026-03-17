@@ -7,11 +7,11 @@ using System.Text.Json.Nodes;
 
 namespace KoordineringsApp.FileIO
 {
-    public abstract class AbstractRepository
+    public abstract class FileHandler
     {
         private readonly string _path;
 
-        protected AbstractRepository(string path) => _path = path;
+        protected FileHandler(string path) => _path = path;
         protected string Path => _path;
 
         public List<T> Read<T>()
