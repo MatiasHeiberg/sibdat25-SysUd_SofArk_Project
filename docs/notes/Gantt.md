@@ -15,7 +15,8 @@ gantt
     Planlægning          :done,    p1, 2026-03-13, 1d
     Projektidé           :done,    p1, 2026-03-13, 1d
 	Domænemodel          :done,    p1, 2026-03-13, 1d
-	Use Case workshop    :active,  p1, 2026-03-13, 1d
+	Use Case workshop    :active,  p1, 2026-03-13, 3d
+	1. Iteration (UC1 & UC2)    :active,  p1, 2026-03-16, 2d
 
 
     

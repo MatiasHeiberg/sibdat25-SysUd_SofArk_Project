@@ -6,20 +6,9 @@ sortKey: 1.33495
 ---
 ```mermaid
 xychart-beta
-    title "Burndown Chart"
-    x-axis "Opgaver" [
-        "Start",
-        "Tjek transport ikke optaget",
-        "Vælg tidsramme",
-        "Ugyldigt tidsrum fejl",
-        "Data transportmidler",
-        "Booket transport optaget",
-        "Filtrer status",
-        "Bruger data",
-        "Beskedservice admin",
-        "Bekræft booking",
-        "Oversigt transportmidler"
-    ]
+    title "Burndown Chart UC1 & UC2"
+    x-axis "Opgaver" ["Start","Tjek transport","Tidsramme","Fejl","Data","Optaget","Filter","Bruger","Besked","Bekræft","Oversigt"]
     y-axis "Remaining Work" 0 --> 24
-    line "Actual" [24,23,21,20,18,17,16,14,9,8,0]
+    line "Actual" [24, 22, 20]
+    line "Ideal" [24,21.6,19.2,16.8,14.4,12,9.6,7.2,4.8,2.4,0]
 ```
