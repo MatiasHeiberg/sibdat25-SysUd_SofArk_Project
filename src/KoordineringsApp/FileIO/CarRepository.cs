@@ -6,5 +6,8 @@ namespace KoordineringsApp.FileIO
 {
     public class CarRepository : FileHandler
     {
+        public CarRepository(string path) : base(path)
+        {
+        }
     }
 }

@@ -6,5 +6,9 @@ namespace KoordineringsApp.FileIO
 {
     public class EmployeeRepository : FileHandler
     {
+        public EmployeeRepository(string path) : base(path)
+        {
+
+        }
     }
 }
