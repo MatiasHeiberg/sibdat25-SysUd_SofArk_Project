@@ -9,9 +9,9 @@ namespace KoordineringsApp.Domæne
         public override int Id { get; set; }
         public override string? Name { get; set; }
 
-        public Bike()
+        public Bike(BikeRepository repository)
         {
-            _repository = new BikeRepository();
+            _repository = repository;
         }
     }
 }
