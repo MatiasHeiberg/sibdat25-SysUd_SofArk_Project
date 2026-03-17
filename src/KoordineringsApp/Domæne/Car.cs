@@ -7,9 +7,6 @@ namespace KoordineringsApp.Domæne
         private readonly CarRepository _repository;
         public override int Id { get; set; }
         public override string? Name { get; set; }
-        public Car(CarRepository repository)
-        {
-            _repository = repository;
-        }
+        public Car(CarRepository repository) => _repository = repository;
     }
 }

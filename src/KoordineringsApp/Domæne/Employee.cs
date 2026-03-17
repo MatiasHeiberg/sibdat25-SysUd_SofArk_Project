@@ -11,9 +11,6 @@ namespace KoordineringsApp.Domæne
         public string Name { get; set; }
         public int ID { get; set; }
 
-        public Employee(EmployeeRepository repository)
-        {
-            _repository = repository;
-        }
+        public Employee(EmployeeRepository repository) => _repository = repository;
     }
 }
