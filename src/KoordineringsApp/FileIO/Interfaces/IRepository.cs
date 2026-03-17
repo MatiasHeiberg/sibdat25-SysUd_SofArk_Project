@@ -6,7 +6,6 @@ namespace KoordineringsApp.FileIO.Interfaces
 {
     public interface IRepository<T>
     {
-        void Save();
         List<T> Load();
     }
 }

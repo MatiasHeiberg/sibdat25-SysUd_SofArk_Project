@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KoordineringsApp.FileIO.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -7,14 +8,14 @@ using System.Text.Json.Nodes;
 
 namespace KoordineringsApp.FileIO
 {
-    public abstract class FileHandler
+    public abstract class FileHandler<T> : IRepository<T>
     {
         private readonly string _path;
 
-        protected FileHandler(string path) => _path = path;
+        public FileHandler(string path) => _path = path;
         protected string Path => _path;
 
-        public List<T> Read<T>()
+        public List<T> Load()
         {
             var text = File.ReadAllText(_path);
             return JsonSerializer.Deserialize<List<T>>(text);
