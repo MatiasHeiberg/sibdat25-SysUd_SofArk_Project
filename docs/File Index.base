@@ -66,7 +66,7 @@ views:
       file.name: 276
       formula.Priority: 95
   - type: table
-    name: Backlog
+    name: "Backlog: Main"
     filters:
       and:
         - isTask == true
@@ -80,3 +80,11 @@ views:
         direction: ASC
     columnSize:
       file.name: 358
+  - type: table
+    name: "Backlog: I2"
+    filters:
+      and:
+        - section == "Iteration 2"
+        - isTask == true
+    order:
+      - file.name

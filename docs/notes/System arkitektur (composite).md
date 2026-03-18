@@ -49,7 +49,7 @@ classDiagram
 
     VehicleService --> IVehicleProvider : bruger
     CompositeVehicleProvider ..|> IVehicleProvider : implementerer
-    CompositeVehicleProvider o-- IVehicleProvider : indeholder (aggregates)
+    CompositeVehicleProvider o-- IVehicleProvider : indeholder
     
     BaseVehicleRepository~T~ ..|> IVehicleProvider : implementerer
     BaseVehicleRepository~T~ --|> FileHandler~T~ : arver
