@@ -4,6 +4,7 @@ section: Iteration 1
 exclude: false
 sortKey: 5.58231
 ---
+
 Here is a structured summary of your changes that you can use for your commit message, pull request description, or changelog:
 Domain Refactoring
 •	Renamed the domain folder from the Danish Domæne to the English Domain.

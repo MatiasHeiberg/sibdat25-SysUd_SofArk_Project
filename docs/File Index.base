@@ -28,11 +28,7 @@ views:
       - file.name
       - sortKey
       - section
-    sort:
-      - property: sortKey
-        direction: DESC
-      - property: file.name
-        direction: DESC
+    sort: []
     summaries: {}
     columnSize:
       file.name: 207
