@@ -15,7 +15,7 @@ namespace KoordineringsApp.FileIO
         public FileHandler(string path) => _path = path;
         protected string Path => _path;
 
-        public List<T> Load()
+        public IEnumerable<T> Load()   //Ændringer : Returtypen er ændret fra List<T> til IEnumerable<T>
         {
             var text = File.ReadAllText(_path);
             return JsonSerializer.Deserialize<List<T>>(text);

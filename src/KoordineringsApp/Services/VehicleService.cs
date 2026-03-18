@@ -4,16 +4,16 @@ namespace KoordineringsApp.Services
 {
     public class VehicleService
     {
-        private readonly IVehicleProvider _provider;
+        private readonly IRepository<IVehicle> _repository;
 
-        public VehicleService(IVehicleProvider provider)
+        public VehicleService(IRepository<IVehicle> repository)
         {
-            _provider = provider;
+            _repository = repository;
         }
 
         public IEnumerable<IVehicle> GetVehicles()
         {
-            return _provider.LoadVehicles();
+            return _repository.Load();
         }
     }
 }

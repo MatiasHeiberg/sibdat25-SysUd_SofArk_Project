@@ -3,22 +3,22 @@ using System.Collections.Generic;
 
 namespace KoordineringsApp.FileIO
 {
-    public class CompositeVehicleProvider : IVehicleProvider
+    public class CompositeVehicleProvider : IRepository<IVehicle>
     {
-        private readonly IEnumerable<IVehicleProvider> _providers;
+        private readonly IEnumerable<IRepository<IVehicle>> _repositories;
 
-        public CompositeVehicleProvider(IEnumerable<IVehicleProvider> providers)
+        public CompositeVehicleProvider(IEnumerable<IRepository<IVehicle>> repositories)
         {
-            _providers = providers;
+            _repositories = repositories;
         }
 
-        public IEnumerable<IVehicle> LoadVehicles()
+        public IEnumerable<IVehicle> Load()
         {
             var allVehicles = new List<IVehicle>();
 
-            foreach (var provider in _providers)
+            foreach (var repo in _repositories)
             {
-                allVehicles.AddRange(provider.LoadVehicles());
+                allVehicles.AddRange(repo.Load());
             }
 
             return allVehicles;
