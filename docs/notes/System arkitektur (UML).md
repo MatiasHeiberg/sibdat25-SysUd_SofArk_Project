@@ -94,5 +94,5 @@ sequenceDiagram
     
     FH-->>Repo: Returns List<T>
     Repo-->>VS: Returns IEnumerable<IVehicle>
-    VS-->>App: Returns parsed IEnumerable
+    VS-->>App: IEnumerable<IVehicle>
 ```
