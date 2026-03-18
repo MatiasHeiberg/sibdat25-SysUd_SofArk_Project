@@ -25,26 +25,29 @@ classDiagram
     
     class IVehicleProvider {
         <<interface>>
-        +LoadVehicles() List~IVehicleProvider~
+        +LoadVehicles() IEnumerable~IVehicle~
     }
     
     class FileHandler~T~ {
         <<abstract>>
-        -string _path
-        #string Path
+        -path : string
+        #Path : string
         +Load() List~T~
     }
     
     class BaseVehicleRepository~T~ {
         <<abstract>>
-        +LoadVehicles() List~IVehicleProvider~
+        +LoadVehicles() IEnumerable~IVehicle~
     }
     
     class CarRepository { }
     class BikeRepository { }
     class EmployeeRepository { }
     
-    class VehicleService { }
+    class VehicleService { 
+	    -providers : IEnumerable~IVehicle~ 
+	    +GetVehicles() IEnumerable~IVehicle~
+    }
     
     IRepository~T~ <|.. FileHandler~T~
     FileHandler~T~ <|-- BaseVehicleRepository~T~
@@ -72,7 +75,7 @@ This sequence diagram illustrates a standard program flow of getting vehicles lo
 sequenceDiagram
     participant App
     participant VS as VehicleService
-    participant Repo as CarRepository
+    participant Repo as IVehicleProvider
     participant FH as FileHandler
     participant FS as File System
     participant JSON as JsonSerializer
@@ -90,6 +93,6 @@ sequenceDiagram
     JSON-->>FH: List<T> objects
     
     FH-->>Repo: Returns List<T>
-    Repo-->>VS: Returns List<IVehicleProvider>
+    Repo-->>VS: Returns IEnumerable<IVehicle>
     VS-->>App: Returns parsed IEnumerable
 ```

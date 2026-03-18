@@ -4,6 +4,7 @@
     "cssclasses": "multitext",
     "tags": "tags",
     "risici": "text",
-    "isTask": "checkbox"
+    "isTask": "checkbox",
+    "done": "checkbox"
   }
 }

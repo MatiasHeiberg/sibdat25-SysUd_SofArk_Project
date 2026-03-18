@@ -78,6 +78,7 @@ views:
       - file.name
       - storyPoint
       - comment
+      - done
     sort:
       - property: storyPoint
         direction: ASC
