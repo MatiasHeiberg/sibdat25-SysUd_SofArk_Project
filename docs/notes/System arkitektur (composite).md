@@ -26,6 +26,7 @@ classDiagram
     }
 
     class CompositeVehicleProvider {
+	    <<composite>>
         -IEnumerable~IVehicleProvider~ _providers
         +CompositeVehicleProvider(IEnumerable~IVehicleProvider~ providers)
         +LoadVehicles() IEnumerable~IVehicle~
@@ -43,8 +44,8 @@ classDiagram
         +LoadVehicles() IEnumerable~IVehicle~
     }
 
-    class CarRepository { }
-    class BikeRepository { }
+    class CarRepository { <<leaf>> }
+    class BikeRepository { <<leaf>> }
 
     VehicleService --> IVehicleProvider : bruger
     CompositeVehicleProvider ..|> IVehicleProvider : implementerer
