@@ -6,12 +6,13 @@ using System.Linq;
 
 namespace KoordineringsApp.FileIO
 {
-    public abstract class BaseVehicleRepository<T> : FileHandler<T>, IVehicleProvider<T> 
-        where T : IVehicleProvider<T>
+    public abstract class BaseVehicleRepository<T> : FileHandler<T>, IVehicleProvider 
+        where T : IVehicleProvider
     {
         public BaseVehicleRepository(string path) : base(path) 
         {
         }
-        public List<T> LoadVehicles() => Load();//.Cast<IVehicle>(); //.ToList(); // 
+        public IEnumerable<IVehicle> LoadVehicles() => Load().Cast<IVehicle>();
     }
 }
+    
