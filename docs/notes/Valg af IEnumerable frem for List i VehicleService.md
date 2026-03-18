@@ -4,6 +4,7 @@ section: Iteration 1
 exclude: false
 sortKey: 5.48062
 ---
+
 ### Den arkitektoniske årsag: Sikkerhed og Hensigt
 
 Selvom vi hypotetisk set _kunne_ tvinge DI-containeren til at levere en liste, så ville vi lade være af rent arkitektoniske årsager. Det handler om, hvad vi giver vores `VehicleService` lov til at gøre.
