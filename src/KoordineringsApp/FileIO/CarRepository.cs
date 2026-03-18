@@ -7,7 +7,7 @@ using System.Text;
 
 namespace KoordineringsApp.FileIO
 {
-    public class CarRepository : BaseVehicleRepository<CarRepository>
+    public class CarRepository : BaseVehicleRepository<Car>
     {
         public CarRepository(string path) : base(path)
         {
