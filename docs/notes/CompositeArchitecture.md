@@ -95,3 +95,77 @@ sequenceDiagram
     VS-->>Client: Returnerer IEnumerable<IVehicle>
     deactivate VS
 ```
+
+## 3. Komplet Statisk Diagram over nuværende implementering
+
+Dette diagram viser hele den nuværende implementering, herunder domænemodeller og FileIO/Repository-klasser, i én samlet visning.
+
+```mermaid
+classDiagram
+    namespace Interfaces {
+        class IRepository~T~ {
+            <<interface>>
+            +Load() List~T~
+        }
+        class IVehicleProvider {
+            <<interface>>
+            +LoadVehicles() IEnumerable~IVehicle~
+        }
+        class IVehicle {
+            <<interface>>
+        }
+    }
+
+    namespace Domain {
+        class Car { }
+        class Bike { }
+        class Employee { }
+    }
+
+    namespace FileIO {
+        class FileHandler~T~ {
+            <<abstract>>
+            -string _path
+            #string Path
+            +FileHandler(string path)
+            +Load() List~T~
+        }
+        class BaseVehicleRepository~T~ {
+            <<abstract>>
+            +BaseVehicleRepository(string path)
+            +LoadVehicles() IEnumerable~IVehicle~
+        }
+        class CarRepository { }
+        class BikeRepository { }
+        class EmployeeRepository { }
+    }
+
+    namespace Services {
+        class VehicleService {
+            -IVehicleProvider _provider
+            +VehicleService(IVehicleProvider provider)
+            +GetVehicles() IEnumerable~IVehicle~
+        }
+        class CompositeVehicleProvider {
+            -IEnumerable~IVehicleProvider~ _providers
+            +CompositeVehicleProvider(IEnumerable~IVehicleProvider~ providers)
+            +LoadVehicles() IEnumerable~IVehicle~
+        }
+    }
+
+    IRepository~T~ <|.. FileHandler~T~
+    FileHandler~T~ <|-- BaseVehicleRepository~T~
+    FileHandler~T~ <|-- EmployeeRepository
+
+    IVehicleProvider <|.. BaseVehicleRepository~T~
+    IVehicleProvider <|.. CompositeVehicleProvider
+
+    BaseVehicleRepository~T~ <|-- CarRepository
+    BaseVehicleRepository~T~ <|-- BikeRepository
+
+    CompositeVehicleProvider o-- IVehicleProvider : Indeholder
+    VehicleService --> IVehicleProvider : Bruger
+
+    IVehicle <|.. Car
+    IVehicle <|.. Bike
+```
