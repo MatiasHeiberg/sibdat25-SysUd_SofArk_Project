@@ -2,6 +2,6 @@
 {
     public interface IVehicleProvider
     {
-        List<IVehicle> LoadVehicles();
+        IEnumerable<IVehicle> LoadVehicles();
     }
 }

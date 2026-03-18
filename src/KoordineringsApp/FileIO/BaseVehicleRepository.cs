@@ -11,6 +11,6 @@ namespace KoordineringsApp.FileIO
         public BaseVehicleRepository(string path) : base(path) 
         {
         }
-        public List<IVehicle> LoadVehicles() => Load().Cast<IVehicle>().ToList();
+        public IEnumerable<IVehicle> LoadVehicles() => Load().Cast<IVehicle>().ToList();
     }
 }
