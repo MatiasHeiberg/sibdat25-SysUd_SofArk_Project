@@ -1,6 +1,6 @@
 ﻿using KoordineringsApp.FileIO.Interfaces;
 
-namespace KoordineringsApp.Program
+namespace KoordineringsApp.Services
 {
     public class VehicleService
     {
@@ -11,17 +11,17 @@ namespace KoordineringsApp.Program
             _providers = providers;
         }
 
-        public List<IVehicle> GetVehicles()
+        public IEnumerable<IVehicle> GetVehicles()
         {
             var allVehicles = new List<IVehicle>();
 
             foreach (var provider in _providers)
             {
-                var vehiclesFromProvider = provider.LoadVehicles();
+                IEnumerable<IVehicle> vehiclesFromProvider = provider.LoadVehicles();
                 allVehicles.AddRange(vehiclesFromProvider);
             }
 
-            return allVehicles;
+            return (IEnumerable<IVehicle>)allVehicles;
         }
     }
 }
