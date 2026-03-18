@@ -4,24 +4,16 @@ namespace KoordineringsApp.Services
 {
     public class VehicleService
     {
-        private readonly IEnumerable<IVehicleProvider> _providers;
+        private readonly IVehicleProvider _provider;
 
-        public VehicleService(IEnumerable<IVehicleProvider> providers)
+        public VehicleService(IVehicleProvider provider)
         {
-            _providers = providers;
+            _provider = provider;
         }
 
         public IEnumerable<IVehicle> GetVehicles()
         {
-            var allVehicles = new List<IVehicle>();
-
-            foreach (var provider in _providers)
-            {
-                IEnumerable<IVehicle> vehiclesFromProvider = provider.LoadVehicles();
-                allVehicles.AddRange(vehiclesFromProvider);
-            }
-
-            return (IEnumerable<IVehicle>)allVehicles;
+            return _provider.LoadVehicles();
         }
     }
 }
