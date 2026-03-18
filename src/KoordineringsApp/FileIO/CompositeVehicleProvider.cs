@@ -1,7 +1,7 @@
 using KoordineringsApp.FileIO.Interfaces;
 using System.Collections.Generic;
 
-namespace KoordineringsApp.Services
+namespace KoordineringsApp.FileIO
 {
     public class CompositeVehicleProvider : IVehicleProvider
     {
