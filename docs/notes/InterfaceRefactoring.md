@@ -9,16 +9,17 @@ sortKey: 6.58881
 classDiagram
 	namespace FileIO {
 	
-	    class IRepository {
+	    class IRepository~out T~ {
 	        <<interface>>
-	        +Load~T~() IEnumerable~T~
+	        +Load() IEnumerable~T~
 		}
-		class FileHandler {
+		class FileHandler~T~ {
 	        <<abstract>>
 	        -_path : string
 	    }
-		class CompositeVehicleProvider~T~ {
-	        -_repositories : IEnumerable~IRepository~
+		class CompositeRepository~T~ {
+	        -_repositories : IEnumerable~IRepository~T~~
+            +Load() IEnumerable~T~
 		}
 		class CarRepository
 	    class BikeRepository
@@ -56,7 +57,7 @@ classDiagram
 	namespace Services {
 
 	    class VehicleService {
-	        -_repository : IRepository
+	        -_repository : IRepository~IVehicle~
 	        +GetVehicles() IEnumerable~IVehicle~
 	    }
 	
@@ -67,15 +68,15 @@ classDiagram
     IVehicle <|.. Car : implementerer
     IVehicle <|.. Bike : implementerer
 
-    IRepository <|.. FileHandler~T~ : implementerer
+    IRepository <|.. FileHandler : implementerer
     
-    FileHandler <|-- CarRepository : nedarver
-    FileHandler <|-- BikeRepository : nedarver
-    FileHandler <|-- EmployeeRepository : nedarver
+    FileHandler <|-- CarRepository 
+    FileHandler <|-- BikeRepository 
+    FileHandler <|-- EmployeeRepository 
 
     %% Composite Pattern og Associationer
-    IRepository <|.. CompositeVehicleProvider~T~ : implementerer
-    CompositeVehicleProvider o-- IRepository : aggregerer
+    IRepository <|.. CompositeRepository : implementerer
+    CompositeRepository o-- IRepository : aggregerer
     
     VehicleService o-- IRepository : afhænger af
     ```
