@@ -17,8 +17,10 @@ namespace KoordineringsApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        public AppFacade facade;
         public MainWindow(AppFacade facade)
         {
+            this.facade = facade;
             InitializeComponent();
         }
 
