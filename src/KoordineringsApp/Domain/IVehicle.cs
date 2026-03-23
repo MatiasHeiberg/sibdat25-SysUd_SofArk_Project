@@ -1,4 +1,4 @@
-﻿namespace KoordineringsApp.FileIO.Interfaces
+﻿namespace KoordineringsApp.Domain
 {
     public interface IVehicle
     {

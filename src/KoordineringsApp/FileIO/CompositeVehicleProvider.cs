@@ -1,3 +1,4 @@
+using KoordineringsApp.Domain;
 using KoordineringsApp.FileIO.Interfaces;
 using System.Collections.Generic;
 

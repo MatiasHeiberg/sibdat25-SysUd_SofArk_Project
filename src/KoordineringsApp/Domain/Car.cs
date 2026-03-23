@@ -1,5 +1,4 @@
 ﻿using KoordineringsApp.FileIO;
-using KoordineringsApp.FileIO.Interfaces;
 
 namespace KoordineringsApp.Domain
 {
