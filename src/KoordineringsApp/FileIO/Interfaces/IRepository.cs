@@ -4,9 +4,8 @@ using System.Text;
 
 namespace KoordineringsApp.FileIO.Interfaces
 {
-    public interface IRepository<T>
-
+    public interface IRepository<out T>
     {
-        List<T> Load();
+        IEnumerable<T> Load();
     }
 }
