@@ -1,18 +1,18 @@
 [
     {
-        "id": 1,
-        "name": "Cykel"
+        "Id": 1,
+        "Name": "Cykel"
     },
     {
-        "id": 2,
-        "name": "Cykel"
+        "Id": 2,
+        "Name": "Cykel"
     },
     {
-        "id": 3,
-        "name": "Cykel"
+        "Id": 3,
+        "Name": "Cykel"
     },
     {
-        "id": 4,
-        "name": "Cykel"
+        "Id": 4,
+        "Name": "Cykel"
     }
 ]

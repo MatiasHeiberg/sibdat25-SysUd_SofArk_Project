@@ -13,10 +13,11 @@ namespace KoordineringsApp
     /// </summary>
     public partial class App : Application
     {
-        public void OnStartUp()
+        protected override void OnStartup(StartupEventArgs e)
         {
-            BikeRepository bikeRepository = new("src\\KoordineringsApp\\Data\\Bike.json");
-            CarRepository carRepository = new("src\\KoordineringsApp\\Data\\Car.json");
+            base.OnStartup(e);
+            BikeRepository bikeRepository = new("Data\\Bike.json");
+            CarRepository carRepository = new("Data\\Car.json");
 
             IEnumerable<IRepository<IVehicle>> repos = [bikeRepository, carRepository];
             var compositeRepo = new CompositeRepository<IVehicle>(repos);
@@ -26,6 +27,7 @@ namespace KoordineringsApp
 
             AppFacade facade = new AppFacade(vehicleService, bookingService);
             MainWindow mainWindow = new MainWindow(facade);
+            mainWindow.Show();
         }
 
     }

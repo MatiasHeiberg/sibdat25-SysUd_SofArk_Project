@@ -17,17 +17,15 @@ namespace KoordineringsApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public AppFacade facade;
+        private readonly AppFacade _facade;
         public MainWindow(AppFacade facade)
         {
-            this.facade = facade;
             InitializeComponent();
+
+            _facade = facade;
+
+            VehicleList.ItemsSource = _facade.GetVehicles();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-
-        }
     }
 }

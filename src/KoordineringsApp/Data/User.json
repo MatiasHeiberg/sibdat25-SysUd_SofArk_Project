@@ -1,58 +1,58 @@
 [
     {
-        "id": 1,
-        "name": "Medarbejder 1"
+        "Id": 1,
+        "Name": "Medarbejder 1"
     },
     {
-        "id": 2,
-        "name": "Medarbejder 2"
+        "Id": 2,
+        "Name": "Medarbejder 2"
     },
     {
-        "id": 3,
-        "name": "Medarbejder 3"
+        "Id": 3,
+        "Name": "Medarbejder 3"
     },
     {
-        "id": 4,
-        "name": "Medarbejder 4"
+        "Id": 4,
+        "Name": "Medarbejder 4"
     },
     {
-        "id": 5,
-        "name": "Medarbejder 5"
+        "Id": 5,
+        "Name": "Medarbejder 5"
     },
     {
-        "id": 6,
-        "name": "Medarbejder 6"
+        "Id": 6,
+        "Name": "Medarbejder 6"
     },
     {
-        "id": 7,
-        "name": "Medarbejder 7"
+        "Id": 7,
+        "Name": "Medarbejder 7"
     },
     {
-        "id": 8,
-        "name": "Medarbejder 8"
+        "Id": 8,
+        "Name": "Medarbejder 8"
     },
     {
-        "id": 9,
-        "name": "Medarbejder 9"
+        "Id": 9,
+        "Name": "Medarbejder 9"
     },
     {
-        "id": 10,
-        "name": "Medarbejder 10"
+        "Id": 10,
+        "Name": "Medarbejder 10"
     },
     {
-        "id": 11,
-        "name": "Medarbejder 11"
+        "Id": 11,
+        "Name": "Medarbejder 11"
     },
     {
-        "id": 12,
-        "name": "Medarbejder 12"
+        "Id": 12,
+        "Name": "Medarbejder 12"
     },
     {
-        "id": 13,
-        "name": "Medarbejder 13"
+        "Id": 13,
+        "Name": "Medarbejder 13"
     },
     {
-        "id": 14,
-        "name": "Medarbejder 14"
+        "Id": 14,
+        "Name": "Medarbejder 14"
     }
 ]

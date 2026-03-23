@@ -16,5 +16,10 @@ namespace KoordineringsApp.Services
             _vehicleService = vehicleService;
             _bookingService = bookingService;
         }
+
+        public IEnumerable<IVehicle> GetVehicles()
+        {
+            return _vehicleService.GetVehicles();
+        }
     }
 }

@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}">
+        <ListView x:Name="VehicleList" AllowDrop="True">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" Width="50"/>
+                    <GridViewColumn Header="Navn" DisplayMemberBinding="{Binding Name}" Width="200"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Button" Click="Button_Click"/>
 
     </Grid>
 </Window>

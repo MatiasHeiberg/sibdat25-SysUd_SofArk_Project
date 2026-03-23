@@ -1,18 +1,18 @@
 [
     {
-        "id": 1,
-        "name": "Bil"
+        "Id": 1,
+        "Name": "Bil"
     },
     {
-        "id": 2,
-        "name": "Bil"
+        "Id": 2,
+        "Name": "Bil"
     },
     {
-        "id": 3,
-        "name": "Bil"
+        "Id": 3,
+        "Name": "Bil"
     },
     {
-        "id": 4,
-        "name": "Bil"
+        "Id": 4,
+        "Name": "Bil"
     }
 ]
