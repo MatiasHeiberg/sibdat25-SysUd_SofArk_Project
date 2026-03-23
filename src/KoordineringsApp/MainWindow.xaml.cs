@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using KoordineringsApp.Services;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,7 +17,7 @@ namespace KoordineringsApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(AppFacade facade)
         {
             InitializeComponent();
         }

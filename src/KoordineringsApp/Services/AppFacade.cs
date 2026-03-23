@@ -13,7 +13,8 @@ namespace KoordineringsApp.Services
 
         public AppFacade(VehicleService vehicleService, BookingService bookingService)
         {
-
+            _vehicleService = vehicleService;
+            _bookingService = bookingService;
         }
     }
 }
