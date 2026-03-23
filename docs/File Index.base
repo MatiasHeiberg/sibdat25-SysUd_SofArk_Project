@@ -21,6 +21,7 @@ views:
       and:
         - file.inFolder("docs/notes")
         - exclude != true
+        - isTask != true
     groupBy:
       property: section
       direction: ASC

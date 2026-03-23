@@ -8,14 +8,14 @@
 // 🔒 LÅSE-FUNKTION:
 // Når I er færdige med "note-fasen" og vil begynde at renskrive dette
 // afsnit manuelt her i VS Code, skal I ændre 'UNLOCKED' til 'LOCKED'.
-// Så vil scriptet springe denne fil over fremover, og jeres manuelle 
+// Så vil scriptet springe denne fil over fremover, og jeres manuelle
 // Typst-kode er fredet.
-// 
+//
 // UNLOCKED
 // ======================================================================
 
 
-Som det tidligere er bevist @einstein1905
+Som det tidligere er bevist
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
