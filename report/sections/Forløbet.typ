@@ -1,0 +1,1 @@
+== Faktiske iterationsstruktur
