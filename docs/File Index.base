@@ -82,9 +82,10 @@ views:
       - done
     sort:
       - property: storyPoint
-        direction: ASC
+        direction: DESC
     columnSize:
-      file.name: 358
+      file.name: 222
+      note.storyPoint: 91
   - type: table
     name: "Backlog: I2"
     filters:
