@@ -1,6 +1,10 @@
----
-is_draft: true 
----
+
+
+## AI-komposition
+
+![[Rapportkomposition]]
+
+![[message]]
 
 ## Inception
 
@@ -25,6 +29,8 @@ is_draft: true
 ![[Risikovurdering - argument]]
 
 ![[Første prioriteringsliste]]
+
+![[Estimering]]
 
 ## Iteration 1
 
