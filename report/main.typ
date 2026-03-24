@@ -26,23 +26,18 @@
 #pagebreak()
 = Bilag
 
-// Opsætning af nummerering for bilag
-// Level 1 (= Titel) bliver "Bilag A"
-// Level 2 (== Underoverskrift) bliver "A.1"
+// Opsætning: Gør level 2 overskrifter til "Bilag X" format
 #set heading(numbering: (..nums) => {
   let vals = nums.pos()
-  if vals.len() == 1 {
-    return "Bilag " + numbering("A", vals.at(0))
-  } else {
-    return numbering("A.1", ..nums)
+  if vals.len() == 2 {
+    // Level 2 (e.g., 8.1) vises som "Bilag A"
+    return "Bilag " + numbering("A", vals.at(1)) + " -"
   }
-}, supplement: "Bilag")
-
-#counter(heading).update(0)
+})
 
 // === C. INDSÆT DINE BILAG HERUNDER ===
-// Hver fil bør starte med en = Overskrift (Level 1)
-#include "bilag/eksempel.typ"
+// Husk: Brug '==' for titel, og '#pagebreak()' før hver ny.
 
-
-
+#pagebreak()
+== SMS <bilag:sms>
+#include "bilag/sms.typ"
