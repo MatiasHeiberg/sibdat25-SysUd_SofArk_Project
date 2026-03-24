@@ -10,6 +10,7 @@ namespace KoordineringsApp.Services
         public VehicleService(IRepository<IVehicle> repository)
         {
             _repository = repository;
+
         }
 
         public IEnumerable<IVehicle> GetVehicles()

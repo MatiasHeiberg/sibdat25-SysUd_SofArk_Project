@@ -16,8 +16,8 @@
 = Arkitektur og design
 #include "sections/Arkitektur og design.typ"
 = Diskussion
-#include
-= Refleksion 
+#include "sections/Diskussion.typ"
+= Refleksion
 #include "sections/Refleksion.typ"
 = Litteraturliste
 #bibliography("references.bib", title: none)
