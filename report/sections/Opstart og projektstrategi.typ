@@ -6,36 +6,34 @@ Vores projekt har fokuseret på en case bestående af _Bostedet Tulipanvej_ der 
 - 4 biler kun til bostøtten
 - Booking (af biler) sker i Outlook
 - Der er retningslinjer for, hvor langt frem man må booke
-På trods af denne information måtte vi erkende at vores kendskab til domænet var for begrænset til at vi kunne gå igang med en Use Case Workshop som Inception fasen oftest startes med i Unified Process @larmanApplyingUMLPatterns. Vores ønske var at arbejde med et ægte domæne for at kunne arbejde agilt, men vi blev nød til at tilgå det som et kunstigt domæne. Derfor valgte vi at ændre på processen og starte med at modellere problemdomænet med en koncept model. Det gjorde vi for at få et fælles grundlag for det (delvist) fiktive domæne. Normalt ville modelleringen komme efter at domænet er blevet afdækket med en PO i en use case workshop. I vores projekt brugte vi det som et værktøj til at blive enige om hvlilke antagelser vi ville lave om de manglende domæne information.
+På trods af denne information måtte vi erkende at vores kendskab til domænet var for begrænset til at vi kunne gå igang med en Use Case Workshop som Inception fasen oftest startes med i Unified Process  @larmanApplyingUMLPatterns. Vores ønske var at arbejde med et ægte domæne for at kunne arbejde agilt, men vi blev nød til at tilgå det som et kunstigt domæne. Derfor valgte vi at ændre på processen og starte med at modellere problemdomænet med en koncept model. Det gjorde vi for at få et fælles grundlag for det (delvist) fiktive domæne. Normalt ville modelleringen komme efter at domænet er blevet afdækket med en PO i en use case workshop. I vores projekt brugte vi det som et værktøj til at blive enige om hvlilke antagelser vi ville lave om de manglende domæne information.
 == Opgaveformulering vs. agil metode
 
 Det kunstige scenarie tvang os til at reflektere over, hvordan man arbejder agilt i en kontekst med stærkt begrænsede ressourcer og tid. Dilemmaet bestod i, om vi skulle lade projektets rammer — et to-ugers skoleprojekt — begrænse vores analyse fra start, eller om vi skulle tilgå processen med et åbent sind og analysere domænet naivt, som om det var et fuldtskala-projekt.
 
 Vi valgte at forblive tro mod den agile tankegang og gennemføre analysen uden forudindtagede begrænsninger. For at håndtere det begrænsede scope i praksis, inddrog vi det som en faktor i vores prioritering frem for i analysen. Konkret betød det, at use cases der lå uden for realistisk rækkevidde, blev tildelt en høj værdi på _Cost_-aksen i vores _value-driven_ prioritering. Derved sikrede vi, at prioriterings-scoren naturligt sorterede urealistiske krav fra, samtidig med at vi opretholdt retten til pragmatisk at ekskludere use cases, der trods en favorabel score ikke kunne rummes inden for tidsrammen.
 
-== Iterationsstruktur
-Vi tænker, at inception-fasen skal løbe over to dage (torsdag 12/3 + fredag 13/3)
+== Projekt- og iterationsstruktur \ *(tilføj gantt vs burndown)*
+Vi tilrettelagde en intensiv Inception-fase over to dage for at etablere domæneforståelse og prioritere krav. Grundet gruppens begrænsede erfaring med WPF planlagde vi tre korte iterationer á to dage for hurtigt at kunne evaluere tekniske valg. Vi besluttede også at hver iteration skulle implementere use cases i vertikale slices frem for at fokuserer på at fuldende et lag af gangen. Den tilgang kaldes også for _tracer bullets_ @thomasPragmaticProgrammerYour2020 af den årsag at feedback cyklussen bliver forkortet hvilket skulle hjælpe os med hurtigt at kunne vurdere vores design- og implementering. Særdeles ift. WPF som var ny teknologi for os.
 
-Vi arbejder ud fra klients første domænebeskrivelse.
+Vi besluttede at processtyringen skulle forankres i opsamlingsmøder i slutningen af hver iteration der naturligt skulle føre videre til planlægningen af den næste iteration. I den forbindelse diskuterede vi også om vi skulle kontrollere vores produktivitet med et Gantt- eller Burndown-diagram... // Lasse here you go!
 
-Vi diskuterer, om 1-3 iterationer er realistisk i projektet.
+#table(
+  columns: (auto, 1fr),
+  inset: 10pt,
+  align: horizon,
+  table.header([*Fase*], [*Fokus og Aktiviteter*]),
+  [Inception 1\ (12/3 - 13/3)],
+  [OOA, domænemodellering og krav-workshop. Prioritering af Use Cases baseret på risici og kundeværdi. Planlæg iteration E1.],
 
-Inception oversigt
+  [Elaboration 1\ (16/3 - 17/3)], [],
 
-^1c3ba6
+  [Elaboration 2\ (18/3)], [],
 
-- OOA
-- Domænemodel
-- Krav-workshop - Use Case Model
-- prioriter krav - ud fra risici og kundeværdi
-- planlæg iterationer (Vi lægger en overordnet plan - men holder 'mandagsmøder' og 'opsamlingsmøder' i starten og slutningen af hver iteration med kommunikations-UML'er)
+  [IT-Days\ (19/3)], [Karrieremesse.],
 
-Vi diskuterer den agile proces i så kort et projekt. Vi tænker, at der skal være et par hele dagen til at lave færdige diagrammer og renskrive opgaven.
+  [Elaboration 2\ (20/3)], [],
 
-WPF er forholdsvist nyt for gruppen - det taget i betragtning tænker vi 3 iterationer på to dage hver er udgangspunktet
-
-Dag 1 Elaboration starter mandag (16/3)
-
-
-Vi diskuterer burnout-chart vs Gantt kort
-== Slices
+  [Elaboration 3\ (23/3 - 24/3)], [],
+  [Afslutning\ (25/3 - 27/3)], [Renskrivning af rapport, udarbejdelse af diagrammer og aflevering.],
+)
