@@ -23,8 +23,7 @@ Det er værd at bemærke, at vores implementering af 'Facade pattern' `AppFacade
 Hver gang en ny service tilføjes kræver det ændring af kontruktør og metodeliste:
 
 ```csharp
-public AppFacade(VehicleService vehicleService, BookingService
- bookingService)
+public AppFacade(VehicleService vehicleService, BookingService bookingService)
 {
     _vehicleService = vehicleService;
     _bookingService = bookingService;
@@ -34,4 +33,28 @@ Dette er et kompromis vi bevidst har indgået da Facade-mønsterets formål neto
 
 OCP var også den primære årsag til vores refactoring af vores Composite-pattern implementering `CompositeVehicleProvider` til den generiske `CompositeRepository<T>`.
 
-Med den generiske løsning kan vi tilføje en `BookingReposit`
+Med den generiske løsning kan vi tilføje en `BookingRepository` uden at ændre andet kode:
+
+```csharp
+public class BookingRepository : FileHandler<Booking>
+  {
+      public BookingRepository(string path) : base(path)
+      {
+      }
+  }
+```
+
+Herefter kan den bruges direkte med den eksisterende `CompositeRepository<T>`:
+
+```csharp
+IEnumerable<IRepository<Booking>> repos = [new BookingRepository("Data\\Booking.json")];
+var compositeBookingRepo = new CompositeRepository<Booking>(repos);
+```
+
+Inden refaktoreringen var `CompositeVehicleProvider` lukket for udvidelse da den var hardcodet til `IVehicle`.
+
+Et andet problem vi løste under vores refaktorering var et direkte brud på Liskov Substitution Principle. Vi erkendte, at `IReposity<Car>` ikke kunne erstatte `IRepository<Vehicle>` på trods af, at `Car` implementerer `Ivehicle` at. Som beskreveet i 4.1 løste vi dette ved indførelsen af kovarians.
+
+Vi har endvidere fokuseret på, at samle alle afhængigheder, som Dependency Inversion princippet foreskriver, i DI-roden i `App.xaml.cs`.
+
+I følge GRASPs=?= Information Expert bør ansvar placeres der, hvor informationen befinder sig. `FileHandler<T>` er vores informationsekspert for filindlæsning, da den både filstien, typen og har ansvaret for at deserialisere.
