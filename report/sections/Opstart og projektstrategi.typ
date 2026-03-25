@@ -12,6 +12,30 @@ På trods af denne information måtte vi erkende at vores kendskab til domænet 
 Det kunstige scenarie tvang os til at reflektere over, hvordan man arbejder agilt i en kontekst med stærkt begrænsede ressourcer og tid. Dilemmaet bestod i, om vi skulle lade projektets rammer — et to-ugers skoleprojekt — begrænse vores analyse fra start, eller om vi skulle tilgå processen med et åbent sind og analysere domænet naivt, som om det var et fuldtskala-projekt.
 
 Vi valgte at forblive tro mod den agile tankegang og gennemføre analysen uden forudindtagede begrænsninger. For at håndtere det begrænsede scope i praksis, inddrog vi det som en faktor i vores prioritering frem for i analysen. Konkret betød det, at use cases der lå uden for realistisk rækkevidde, blev tildelt en høj værdi på _Cost_-aksen i vores _value-driven_ prioritering. Derved sikrede vi, at prioriterings-scoren naturligt sorterede urealistiske krav fra, samtidig med at vi opretholdt retten til pragmatisk at ekskludere use cases, der trods en favorabel score ikke kunne rummes inden for tidsrammen.
-== Konsekvenser for Task-formuleringer
+
 == Iterationsstruktur
+Vi tænker, at inception-fasen skal løbe over to dage (torsdag 12/3 + fredag 13/3)
+
+Vi arbejder ud fra klients første domænebeskrivelse.
+
+Vi diskuterer, om 1-3 iterationer er realistisk i projektet.
+
+Inception oversigt
+
+^1c3ba6
+
+- OOA
+- Domænemodel
+- Krav-workshop - Use Case Model
+- prioriter krav - ud fra risici og kundeværdi
+- planlæg iterationer (Vi lægger en overordnet plan - men holder 'mandagsmøder' og 'opsamlingsmøder' i starten og slutningen af hver iteration med kommunikations-UML'er)
+
+Vi diskuterer den agile proces i så kort et projekt. Vi tænker, at der skal være et par hele dagen til at lave færdige diagrammer og renskrive opgaven.
+
+WPF er forholdsvist nyt for gruppen - det taget i betragtning tænker vi 3 iterationer på to dage hver er udgangspunktet
+
+Dag 1 Elaboration starter mandag (16/3)
+
+
+Vi diskuterer burnout-chart vs Gantt kort
 == Slices
