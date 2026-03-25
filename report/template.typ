@@ -12,6 +12,7 @@
   authors: (),
   date: none,
   toc-target: heading.where(level: 1).or(heading.where(level: 2)), // Default to showing level 1 and 2
+  anslag: 0,
   body,
 ) = {
   // 1. DOKUMENT OPSÆTNING
@@ -102,8 +103,6 @@
 
     #v(2em)
 
-    // --- MANUELT FORMALIA FELT ---
-    // Her skriver I bare tallene ind manuelt til sidst
     #block(
       fill: luma(250),
       stroke: luma(200),
@@ -111,8 +110,8 @@
       radius: 4pt,
       align(left)[
         *Formalia* \
-        Antal anslag: [SKRIV HER] \
-        Antal normalsider: [SKRIV HER]
+        Antal anslag: #anslag \
+        Antal normalsider: #calc.round(anslag / 2400, digits: 1)
       ],
     )
   ]
@@ -124,7 +123,39 @@
   pagebreak()
 
   // 7. HOVEDINDHOLD
-  set page(numbering: "1 / 1") // Sidetal starter her
+
+  // Nulstil sidetal for brødteksten
   counter(page).update(1)
+
+  // Sidetalsformat i footeren: "Aktuel / Total (Brødtekst)"
+  // Sidetal i ToC (numbering): "1"
+  set page(
+    numbering: "1",
+    footer: context {
+      let page-num = counter(page).get().first()
+      let start-locs = query(<body-start>)
+      let end-locs = query(<bilag-start>)
+
+      if start-locs.len() > 0 and end-locs.len() > 0 {
+        let start-page = start-locs.first().location().page()
+        let end-page = end-locs.first().location().page()
+        let total-body-pages = end-page - start-page
+
+        if page-num <= total-body-pages {
+          align(center, str(page-num) + " / " + str(total-body-pages))
+        } else {
+          // Ingen sidetal på bilagssider
+          none
+        }
+      } else {
+        // Fallback
+        align(center, str(page-num))
+      }
+    },
+  )
+
+  // Markør for start af brødtekst (til beregning af sideantal)
+  [#metadata("Body Start") <body-start>]
+
   body
 }
