@@ -57,4 +57,4 @@ Et andet problem vi løste under vores refaktorering var et direkte brud på Lis
 
 Vi har endvidere fokuseret på, at samle alle afhængigheder, som Dependency Inversion princippet foreskriver, i DI-roden i `App.xaml.cs`.
 
-I følge GRASPs=?= Information Expert bør ansvar placeres der, hvor informationen befinder sig. `FileHandler<T>` er vores informationsekspert for filindlæsning, da den både filstien, typen og har ansvaret for at deserialisere.
+I følge GRASP's Information Expert princip bør ansvar placeres der, hvor informationen befinder sig. `FileHandler<T>` er vores informationsekspert for filindlæsning, da den både filstien, typen og har ansvaret for at deserialisere.
