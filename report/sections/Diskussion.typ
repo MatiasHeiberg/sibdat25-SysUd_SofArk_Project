@@ -16,7 +16,7 @@ public class Employee
   _repository = repository;
   }
 ```
-Her havde `Employee` både til opgave at holde domænedata samt håndtere data.  Vi rettede dette brud på SRP ved at separere domæne- og IO-laget tydeligt fra hinanden.
+Her havde `Employee` både til opgave at holde domænedata samt dataadgang.  Vi rettede dette brud på SRP ved at separere domæne- og IO-laget tydeligt fra hinanden, så dataadgang håndteres af repositories mens `Employee` udelukkende repræsenterer domænet.
 
 Det er værd at bemærke, at vores implementering af 'Facade pattern' `AppFacade` bevidst bryder Open/closed-princippet.
 
