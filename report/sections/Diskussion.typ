@@ -18,16 +18,16 @@ Det er værd at bemærke, at vores implementering af 'Facade pattern' `AppFacade
 
 Hver gang en ny service tilføjes kræver det ændring af kontruktør og metodeliste:
 
- ```csharp
-  public AppFacade(VehicleService vehicleService, BookingService
-   bookingService)
-  {
-      _vehicleService = vehicleService;
-      _bookingService = bookingService;
-  }
-  ```
+```csharp
+public AppFacade(VehicleService vehicleService, BookingService
+ bookingService)
+{
+    _vehicleService = vehicleService;
+    _bookingService = bookingService;
+}
+```
 Dette er et kompromis vi bevidst har indgået da Facade-mønsterets formål netop er at samle services og holde præsentationslaget uvidende omkring dem. (NÆVN DX?)
 
 OCP var også den primære årsag til vores refactoring af vores Composite-pattern implementering `CompositeVehicleProvider` til den generiske `CompositeRepository<T>`.
 
-Med den generiske løsning kan vi tilføje en `BookingReposit
+Med den generiske løsning kan vi tilføje en `BookingReposit`
