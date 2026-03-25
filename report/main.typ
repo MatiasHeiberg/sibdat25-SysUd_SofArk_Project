@@ -5,7 +5,7 @@
 
 // Anvender templaten på hele dokumentet
 #show: project.with(
-  title: "Vores Semesterprojekt",
+  title: "Systemudvikling og softwarearkitektur",
   authors: ("Fornavn Efternavn", "Fornavn Efternavn", "Fornavn Efternavn"),
   date: "Marts 2026",
   toc-target: heading.where(level: 1).or(heading.where(level: 2).before(<bilag-start>)),
