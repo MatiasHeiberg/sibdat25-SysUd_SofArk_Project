@@ -1,11 +1,12 @@
 #import "template.typ": project
 
 // --- KONFIGURATION AF FORMALIA ---
-#let anslag = 8448 // Ændres manuelt når rapporten er færdig
+#let anslag = 13863 // Ændres manuelt når rapporten er færdig
 
 // Anvender templaten på hele dokumentet
 #show: project.with(
-  title: "Systemudvikling og softwarearkitektur",
+  title: "Systemudvikling og
+softwarearkitektur",
   authors: ("Fornavn Efternavn", "Fornavn Efternavn", "Fornavn Efternavn"),
   date: "Marts 2026",
   toc-target: heading.where(level: 1).or(heading.where(level: 2).before(<bilag-start>)),
@@ -52,3 +53,7 @@
 #pagebreak()
 == SMS <bilag:sms>
 #include "bilag/sms.typ"
+
+#pagebreak()
+== Use Case Model <bilag:useCaseModel>
+#include "bilag/useCaseModel.typ"
