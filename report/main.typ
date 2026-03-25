@@ -5,6 +5,7 @@
   title: "Vores Semesterprojekt",
   authors: ("Fornavn Efternavn", "Fornavn Efternavn", "Fornavn Efternavn"),
   date: "Marts 2026",
+  toc-target: heading.where(level: 1).or(heading.where(level: 2).before(<bilag-start>)),
 )
 
 = Opstart og Projektstrategi
@@ -24,7 +25,13 @@
 
 // --- BILAG SEKTION ---
 #pagebreak()
-= Bilag
+= Bilag <bilag-start> // Label used for splitting ToC
+
+// Custom Appendix Outline
+#outline(
+  title: "Bilagsliste",
+  target: heading.where(level: 2).after(<bilag-start>),
+)
 
 // Opsætning: Gør level 2 overskrifter til "Bilag X" format
 #set heading(numbering: (..nums) => {

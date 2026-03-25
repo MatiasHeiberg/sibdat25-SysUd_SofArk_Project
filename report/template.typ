@@ -11,6 +11,7 @@
   title: "",
   authors: (),
   date: none,
+  toc-target: heading.where(level: 1).or(heading.where(level: 2)), // Default to showing level 1 and 2
   body,
 ) = {
   // 1. DOKUMENT OPSÆTNING
@@ -119,7 +120,7 @@
   pagebreak()
 
   // 6. INDHOLDSFORTEGNELSE
-  outline(depth: 2, indent: auto)
+  outline(depth: 2, indent: auto, target: toc-target)
   pagebreak()
 
   // 7. HOVEDINDHOLD
