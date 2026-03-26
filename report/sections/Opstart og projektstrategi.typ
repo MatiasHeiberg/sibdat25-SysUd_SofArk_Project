@@ -49,6 +49,6 @@ Derfor brugte vi Gantt til at visualisere vores overordnede projekt ramme indeho
   caption: [Oprindeligt Gantt diagram],
 )
 
-I tidligere projekter har Gantt dog bidraget konstruktivt til vores læring ved retrospektivt at vise det faktiske forløb. Derfor besluttede vi ligeledes, løbende at udfylde et andet Gantt diagram til, at vise vores faktiske process så vi derved tydeligt kunne se hvor vi afveg fra den planlagte. (Se bilag E)
+I tidligere projekter har Gantt dog bidraget konstruktivt til vores læring ved retrospektivt at vise det faktiske forløb. Derfor besluttede vi ligeledes, løbende at udfylde et andet Gantt diagram til, at vise vores faktiske process så vi derved tydeligt kunne se hvor vi afveg fra den planlagte. (@bilag:Ganttdiagram)
 
-Til at styre hver iteration besluttede vi, at benytte Burndown-diagrammer. Men da iterationerne kun bestod af 2 dage og diagrammet derved ville have for få datapunkter, besluttede vi at lade modificere det og lade x-aksen vise tasks fremfor tidsrammen. (Se bilag F)
+Til at styre hver iteration besluttede vi, at benytte Burndown-diagrammer. Men da iterationerne kun bestod af 2 dage og diagrammet derved ville have for få datapunkter, besluttede vi at lade modificere det og lade x-aksen vise tasks fremfor tidsrammen. (@bilag:BurndownChart)
