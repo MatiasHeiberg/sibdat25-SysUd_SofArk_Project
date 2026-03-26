@@ -15,20 +15,24 @@ softwarearkitektur",
 
 = Opstart og Projektstrategi
 #include "sections/Opstart og projektstrategi.typ"
+
 = Planlægning og tidsestimering
 #include "sections/Planlægning og tidsestimering.typ"
+
 = Forløbet
 #include "sections/Forløbet.typ"
+
 = Arkitektur og design
 #include "sections/Arkitektur og design.typ"
+
 = Diskussion
 #include "sections/Diskussion.typ"
+
 = Refleksion
 #include "sections/Refleksion.typ"
+
 = Litteraturliste
 #bibliography("references.bib", title: none)
 
-// --- BILAG SEKTION ---
-
-= Bilag <bilag-start> // Label used for splitting ToC
+= Bilag <bilag-start>
 #include "sections/bilag.typ"
