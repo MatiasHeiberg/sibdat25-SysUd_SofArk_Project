@@ -1,7 +1,7 @@
 ---
 created: 2026-03-23
 section: AI-komposition
-exclude: false
+exclude: true
 sortKey: 11.57774
 ---
 # Rapportkomposition: Fra Domæneanalyse til Arkitektonisk Erkendelse

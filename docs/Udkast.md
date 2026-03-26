@@ -1,10 +1,6 @@
-
-
-## AI-komposition
-
-![[Rapportkomposition]]
-
-![[message]]
+---
+is_draft: true
+---
 
 ## Inception
 
