@@ -14,29 +14,28 @@ Det kunstige scenarie tvang os til at reflektere over, hvordan man arbejder agil
 Vi valgte at forblive tro mod den agile tankegang og gennemføre analysen uden forudindtagede begrænsninger. For at håndtere det begrænsede scope i praksis, inddrog vi det som en faktor i vores prioritering frem for i analysen. Konkret betød det, at use cases der lå uden for realistisk rækkevidde, blev tildelt en høj værdi på _Cost_-aksen i vores _value-driven_ prioritering. Derved sikrede vi, at prioriterings-scoren naturligt sorterede urealistiske krav fra, samtidig med at vi opretholdt retten til pragmatisk at ekskludere use cases, der trods en favorabel score ikke kunne rummes inden for tidsrammen.
 
 == Projekt- og iterationsstruktur
-Vi tilrettelagde en intensiv Inception-fase over to dage for at etablere domæneforståelse og prioritere krav. Grundet gruppens begrænsede erfaring med WPF planlagde vi tre korte iterationer á to dage for hurtigt at kunne evaluere tekniske valg. Vi besluttede også at hver iteration skulle implementere use cases i vertikale slices frem for at fokuserer på at fuldende et lag af gangen. Den tilgang kaldes også for _tracer bullets_ @thomasPragmaticProgrammerYour2020 af den årsag at feedback cyklussen bliver forkortet hvilket skulle hjælpe os med hurtigt at kunne vurdere vores design- og implementering. Særdeles ift. WPF som var ny teknologi for os.
+Vi tilrettelagde en intensiv Inception-fase over to dage for at etablere domæneforståelse og prioritere krav. Grundet gruppens begrænsede erfaring med WPF planlagde vi tre korte iterationer á to dage for hurtigt at kunne evaluere tekniske valg. Den endelige struktur for projektet, som vi planlagde, kan ses i @table:projektoversigt. Vi besluttede også at hver iteration skulle implementere use cases i vertikale slices frem for at fokuserer på at fuldende et lag af gangen. Den tilgang kaldes også for _tracer bullets_ @thomasPragmaticProgrammerYour2020 af den årsag at feedback cyklussen bliver forkortet hvilket skulle hjælpe os med hurtigt at kunne vurdere vores design- og implementering. Særdeles ift. WPF som var ny teknologi for os.
 
 Vi besluttede at processtyringen skulle forankres i opsamlingsmøder i slutningen af hver iteration der naturligt skulle føre videre til planlægningen af den næste iteration. I den forbindelse diskuterede vi også om vi skulle kontrollere vores produktivitet med et Gantt- eller Burndown-diagram.
 
-#table(
-  columns: (auto, 1fr),
-  inset: 10pt,
-  align: horizon,
-  table.header([*Fase*], [*Fokus og Aktiviteter*]),
-  [Inception 1\ (12/3 - 13/3)],
-  [OOA, domænemodellering og krav-workshop. Prioritering af Use Cases baseret på risici og kundeværdi. Planlæg iteration E1.],
+#figure(
+  table(
+    columns: (auto, 1fr),
+    inset: 10pt,
+    align: horizon,
+    table.header([*Fase*], [*Fokus og Aktiviteter*]),
+    [Inception 1\ (12/3 - 13/3)],
+    [OOA, domænemodellering og krav-workshop. Prioritering af Use Cases baseret på risici og kundeværdi. Planlæg iteration E1.],
 
-  [Elaboration 1\ (16/3 - 17/3)], [],
-
-  [Elaboration 2\ (18/3)], [],
-
-  [IT-Days\ (19/3)], [Karrieremesse.],
-
-  [Elaboration 2\ (20/3)], [],
-
-  [Elaboration 3\ (23/3 - 24/3)], [],
-  [Afslutning\ (25/3 - 27/3)], [Renskrivning af rapport, udarbejdelse af diagrammer og aflevering.],
-)
+    [Elaboration 1\ (16/3 - 17/3)], [],
+    [Elaboration 2\ (18/3)], [],
+    [IT-Days\ (19/3)], [Karrieremesse.],
+    [Elaboration 2\ (20/3)], [],
+    [Elaboration 3\ (23/3 - 24/3)], [],
+    [Afslutning\ (25/3 - 27/3)], [Renskrivning af rapport, udarbejdelse af diagrammer og aflevering.],
+  ),
+  caption: [Projektoversigt],
+) <table:projektoversigt>
 
 
 I vores tidligere projekter har vi erfaret Gantt's begrænsninger som primær styringsværktøj i korte iterative projekter. Da Gantt forudsætter et klart overblik over forløbet, strider dette imod UP's agile og iterative natur hvor krav og design mellem ændres iterationerne. Som Larman påpeger, arbejdes der i iterative processer ikke med en fuldt detaljeret plan for hele projektet fra start: “There isn't a detailed plan for the entire project. There is a high-level plan” @larmanApplyingUMLPatterns
