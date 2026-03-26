@@ -69,3 +69,11 @@ softwarearkitektur",
 #pagebreak()
 == LLM forslag til Use Cases <bilag:useCasesLLM>
 #include "bilag/llm_uc_forslag.typ"
+
+#pagebreak()
+== Gantt diagram (faktisk) <bilag:Ganttdiagram>
+#include "bilag/Ganttdiagram.typ"
+
+#pagebreak()
+== Burndown Chart <bilag:BurndownChart>
+#include "bilag/BurndownChart.typ"
