@@ -67,11 +67,11 @@ softwarearkitektur",
 #include "bilag/domænemodel.typ"
 
 #pagebreak()
-<<<<<<< HEAD
 == Spørgsmål til PO
 <bilag:spørgsmålTilPO>
 #include "bilag/spørgsmålTilPO.typ"
-=======
+
+#pagebreak()
 == LLM forslag til Use Cases <bilag:useCasesLLM>
 #include "bilag/llm_uc_forslag.typ"
 
@@ -82,4 +82,3 @@ softwarearkitektur",
 #pagebreak()
 == Burndown Chart <bilag:BurndownChart>
 #include "bilag/BurndownChart.typ"
->>>>>>> b6cec3b2dd3fc9a88653bce5db772d8a2a614893
