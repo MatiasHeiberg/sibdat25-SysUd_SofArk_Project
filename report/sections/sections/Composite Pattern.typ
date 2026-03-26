@@ -4,7 +4,7 @@ I vores første iteration af projektet var udgangspunktet #link(<UC2>, underline
 
 Under implementeringen blev vi med hjælp fra et genereret klassediagram opmærksomme på den unødvendige kompleksitet i vores design, hvilket gjorde både superklassen og interfacet overflødige. På dette tidspunkt bestod vores arkitektur stadig af to abstraktioner - `IRepository<T>` og `IVehicleProvider`, som servicelaget var afhængig af for at kunne håndtere forskellige transportmidler, da `IRepository<Car>` og `IRepository<Bike>` ikke kunne behandles som `IRepository<IVehicle>`. Klassediagrammet gjorde det tydeligt, at superklassen og `IVehicleProvider` kun eksisterede i systemet for at løse det problem. I et forsøg på at samle flere forskellige transportmidler under en struktur, implementerede vi klassen `CompositeVehicleProvider`, der samlede flere `IVehicleProvider`-instanser og fungerede som kompositklassen fra composite pattern.
 
-```csharp
+```cs
   // IVehicleProvider - interfacet som samlingspunktet afhang af
 
   public interface IVehicleProvider
@@ -47,7 +47,7 @@ Efter indplementeringen af kovarians blev det muligt at generalisere vores compo
 
 Med indførelsen af kovarians kunne vi fjerne `IVehicleProvider` og `BaseVehicleRepository` og erstatte dem med en generisk `CompositeRepository<T>`. Refaktoringen til kovarians gjorde samtidig metoden `LoadVehicles()` overflødig, da behovet for runtime-casting til `IVehicle` blev erstattet af compile-time kontrol. Metoden var `BaseVehicleRepository`'s eneste ansvar - derfor kunne klassen fjernes.
 
-```csharp
+```cs
 // IRepository med kovarians (out T) - muliggør at IRepository<Car> kan behandles som IRepository<IVehicle>
 
 public interface IRepository<out T>

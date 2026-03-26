@@ -5,7 +5,7 @@ Efterhånden som servicelaget tog form, opstod spørgsmålet, om hvordan præsen
 
 Med indførelsen af AppFacade kunne vi derved undgå den direkte kobling mellem præsentationslaget og de enkelte servies. Dertil bidrog det også til at forbedre developer experience, da man derved undgår at skulle tilpasse `MainWindow` i takt med nye services tilføjes. Det bevidste trade-off ift. Open/Closed-princippet behandles i afsnit 5.2.
 
-```csharp
+```cs
 public class AppFacade
 {
     private readonly VehicleService _vehicleService;
@@ -27,7 +27,7 @@ De enkelte services som `MainWindow` har brug for at kende, er derved samlet i `
 
 Dette giver et renere og mere udviklervenligt præsentationslag, da `MainWindow` udelukkende afhænger af `AppFacade` og de tilgængelige metoder
 
-```csharp
+```cs
  public partial class MainWindow : Window
  {
      private readonly AppFacade _facade;
@@ -42,7 +42,7 @@ Dette giver et renere og mere udviklervenligt præsentationslag, da `MainWindow`
 
 Derved kan alle afhængigheder flyttes over i DI-roden i `App.xaml.cs` i overensstemmelse med Dependency
 Inversion princippet.
-```csharp
+```cs
 public partial class App : Application
 {
     protected override void OnStartup(StartupEventArgs e)

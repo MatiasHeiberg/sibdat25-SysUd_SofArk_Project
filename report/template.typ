@@ -72,8 +72,11 @@
   }
 
   // 4. KODE BLOKKE
+  show raw.where(block: true): set raw(theme: "assets/themes/vs-dark.tmTheme")
+  show raw.where(block: true): set text(fill: rgb("#d4d4d4"))
   show raw.where(block: true): block.with(
-    fill: luma(240),
+    fill: rgb("#1e1e1e"),
+    stroke: rgb("#3c3c3c"),
     inset: 10pt,
     radius: 4pt,
     width: 100%,
