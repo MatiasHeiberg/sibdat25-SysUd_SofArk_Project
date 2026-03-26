@@ -12,21 +12,24 @@ Under implementeringen blev vi med hjælp fra et genereret klassediagram opmærk
       IEnumerable<IVehicle> LoadVehicles();
   }
 
-  // BaseVehicleRepository - superklassen der nedarver til Car- og BikeRepository
+  // BaseVehicleRepository - superklassen der nedarver af Car- og BikeRepository
 
-  public abstract class BaseVehicleRepository<T> : FileHandler<T>, IVehicleProvider
+  public abstract class BaseVehicleRepository<T>
+      : FileHandler<T>, IVehicleProvider
   {
       public BaseVehicleRepository(string path) : base(path) { }
-      public IEnumerable<IVehicle> LoadVehicles() => Load().Cast<IVehicle>();
+      public IEnumerable<IVehicle> LoadVehicles() =>
+          Load().Cast<IVehicle>();
   }
 
-  // CompositeVehicleProvider - samler flere IVehicleProvider-instanser og fungerer som et composite pattern
+  // CompositeVehicleProvider - samler flere IVehicleProvider-instanser og er kompositklassen i composite pattern
 
   public class CompositeVehicleProvider : IVehicleProvider
   {
       private readonly IEnumerable<IVehicleProvider> _providers;
 
-      public CompositeVehicleProvider(IEnumerable<IVehicleProvider> providers)
+      public CompositeVehicleProvider(
+          IEnumerable<IVehicleProvider> providers)
       {
           _providers = providers;
       }
@@ -43,7 +46,7 @@ Under implementeringen blev vi med hjælp fra et genereret klassediagram opmærk
   }
 
 ```
-Efter indplementeringen af kovarians blev det muligt at generalisere vores composite pattern og skabe `CompositeRepository<T>` som en generisk løsning. Med kovarians `<out T>` i `IRepository<T>` blev det muligt at behandle repositories af specifikke typer, som Bike og Car, som repositories af deres fælles supertype `IVehicle`. Med denne vigtige ændring blev designet åbent for nye samlinger af repositories i senere iterationer. Det betyder, at compileren nu tillader, at `IRepository<Car>` og `IRepository<Bike>`, samt alle fremtidige transportmidler, der implementerer IVehicle, kan behandles som `IRepository<IVehicle>`, og samtidig risikerer vi ikke, at vores employees bliver behandlet som transportmidler, fordi de ikke er en del af samme typehierarki.
+Efter indplementeringen af kovarians blev det muligt at generalisere vores composite pattern og skabe `CompositeRepository<T>` som en generisk løsning. Med kovarians `<out T>` i `IRepository<T>` blev det muligt at behandle repositories af specifikke typer, Bike og Car, som repositories af deres fælles supertype `IVehicle`. Med denne vigtige ændring blev designet åbent for nye samlinger af repositories i senere iterationer. Det betyder, at compileren nu tillader, at `IRepository<Car>` og `IRepository<Bike>`, samt alle fremtidige transportmidler, der implementerer IVehicle, kan behandles som `IRepository<IVehicle>`, og samtidig risikerer vi ikke, at vores employees bliver behandlet som transportmidler, fordi de ikke er en del af samme typehierarki.
 
 Med indførelsen af kovarians kunne vi fjerne `IVehicleProvider` og `BaseVehicleRepository` og erstatte dem med en generisk `CompositeRepository<T>`. Refaktoringen til kovarians gjorde samtidig metoden `LoadVehicles()` overflødig, da behovet for runtime-casting til `IVehicle` blev erstattet af compile-time kontrol. Metoden var `BaseVehicleRepository`'s eneste ansvar - derfor kunne klassen fjernes.
 
