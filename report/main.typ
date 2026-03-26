@@ -65,3 +65,11 @@ softwarearkitektur",
 #pagebreak()
 == Domænemodel <bilag:domænemodel>
 #include "bilag/domænemodel.typ"
+
+#pagebreak()
+== Gantt diagram (faktisk) <bilag:Ganttdiagram>
+#include "bilag/Ganttdiagram.typ"
+
+#pagebreak()
+== Domænemodel <bilag:BurndownChart>
+#include "bilag/BurndownChart.typ"
