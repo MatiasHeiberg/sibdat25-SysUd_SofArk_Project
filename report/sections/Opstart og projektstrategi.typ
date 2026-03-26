@@ -18,20 +18,6 @@ Vi tilrettelagde en intensiv Inception-fase over to dage for at etablere domæne
 
 Vi besluttede at processtyringen skulle forankres i opsamlingsmøder i slutningen af hver iteration der naturligt skulle føre videre til planlægningen af den næste iteration. I den forbindelse diskuterede vi også om vi skulle kontrollere vores produktivitet med et Gantt- eller Burndown-diagram.
 
-I vores tidligere projekter har vi erfaret Gantt's begrænsninger som primær styringsværktøj i korte iterative projekter. Da Gantt forudsætter et klart overblik over forløbet, strider dette imod UP's agile og iterative natur hvor krav og design mellem ændres iterationerne. Som Larman påpeger, arbejdes der i iterative processer ikke med en fuldt detaljeret plan for hele projektet fra start: “There isn't a detailed plan for the entire project. There is a high-level plan” @larmanApplyingUMLPatterns
-
-Derfor brugte vi Gantt til at visualisere vores overordnede projekt ramme indeholdt de 3 iterationer samt de opgaver der var kommet forud for oprettelsen af selve diagrammet:
-#figure(
-  image(
-    "../assets/Originalt gantt.png",
-  ),
-  caption: [Oprindeligt Gantt diagram],
-)
-
-I tidligere projekter har Gantt dog bidraget konstruktivt til vores læring ved retrospektivt at vise det faktiske forløb. Derfor besluttede vi ligeledes, løbende at udfylde et andet Gantt diagram til, at vise vores faktiske process så vi derved tydeligt kunne se hvor vi afveg fra den planlagte. (Se bilag E)
-
-Til at styre hver iteration besluttede vi, at benytte Burndown-diagrammer. Men da iterationerne kun bestod af 2 dage og diagrammet derved ville have for få datapunkter, besluttede vi at lade modificere det og lade x-aksen vise tasks fremfor tidsrammen. (Se bilag F)
-
 #table(
   columns: (auto, 1fr),
   inset: 10pt,
@@ -51,3 +37,18 @@ Til at styre hver iteration besluttede vi, at benytte Burndown-diagrammer. Men d
   [Elaboration 3\ (23/3 - 24/3)], [],
   [Afslutning\ (25/3 - 27/3)], [Renskrivning af rapport, udarbejdelse af diagrammer og aflevering.],
 )
+
+
+I vores tidligere projekter har vi erfaret Gantt's begrænsninger som primær styringsværktøj i korte iterative projekter. Da Gantt forudsætter et klart overblik over forløbet, strider dette imod UP's agile og iterative natur hvor krav og design mellem ændres iterationerne. Som Larman påpeger, arbejdes der i iterative processer ikke med en fuldt detaljeret plan for hele projektet fra start: “There isn't a detailed plan for the entire project. There is a high-level plan” @larmanApplyingUMLPatterns
+
+Derfor brugte vi Gantt til at visualisere vores overordnede projekt ramme indeholdt de 3 iterationer samt de opgaver der var kommet forud for oprettelsen af selve diagrammet:
+#figure(
+  image(
+    "../assets/Originalt gantt.png",
+  ),
+  caption: [Oprindeligt Gantt diagram],
+)
+
+I tidligere projekter har Gantt dog bidraget konstruktivt til vores læring ved retrospektivt at vise det faktiske forløb. Derfor besluttede vi ligeledes, løbende at udfylde et andet Gantt diagram til, at vise vores faktiske process så vi derved tydeligt kunne se hvor vi afveg fra den planlagte. (Se bilag E)
+
+Til at styre hver iteration besluttede vi, at benytte Burndown-diagrammer. Men da iterationerne kun bestod af 2 dage og diagrammet derved ville have for få datapunkter, besluttede vi at lade modificere det og lade x-aksen vise tasks fremfor tidsrammen. (Se bilag F)
