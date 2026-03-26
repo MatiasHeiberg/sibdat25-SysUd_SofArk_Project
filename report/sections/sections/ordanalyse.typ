@@ -1,0 +1,1 @@
+Med udgangspunkt i beskeden fra Laura valgte vi at starte vores domæneforståelse med en ordanalyse af hendes formuleringer. Her identificerede vi substantiver og verber, som gav os de første byggesten til problemdomænet (Se bilag C).

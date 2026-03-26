@@ -57,3 +57,8 @@ softwarearkitektur",
 #pagebreak()
 == Use Case Model <bilag:useCaseModel>
 #include "bilag/useCaseModel.typ"
+
+
+#pagebreak()
+== Ordanalyse <bilag:ordanalyse>
+#include "bilag/ordanalyse.typ"
