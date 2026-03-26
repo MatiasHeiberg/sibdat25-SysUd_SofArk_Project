@@ -49,7 +49,7 @@
 
   // 3. OVERSKRIFTER
 
-  set heading(numbering: "1.1")
+  set heading(numbering: "1.1", supplement: none)
   show heading: it => {
     // Sørg for pagebreak ved level 1
     if it.level == 1 {
