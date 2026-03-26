@@ -8,8 +8,8 @@ Da vi i denne fase har meget begrænset information at arbejde ud fra, vurderede
     "../../assets/Domænemodeltavle.png",
     width: target-width,
   ),
-  caption: [Domænemodel <figure:domænemodel>],
-)
+  caption: [Domænemodel],
+) <figure:domænemodel>
 
 
 ( @bilag:domænemodel).

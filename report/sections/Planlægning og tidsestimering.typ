@@ -11,7 +11,7 @@
 #include "sections/riskList.typ"
 == Iterations plan
 #include "sections/iterationPlan.typ"
-== Value- og risikodrevet
+== Value- og risikodrevet <sektion:riskValueDriven>
 #include "sections/valueRiskDriven.typ"
 #figure(
   image(
