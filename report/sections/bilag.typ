@@ -18,33 +18,33 @@
 
 #pagebreak()
 == SMS <bilag:sms>
-#include "bilag/sms.typ"
+#include "../bilag/sms.typ"
 
 #pagebreak()
 == Use Case Model <bilag:useCaseModel>
-#include "bilag/useCaseModel.typ"
+#include "../bilag/useCaseModel.typ"
 
 #pagebreak()
 == Ordanalyse <bilag:ordanalyse>
-#include "bilag/ordanalyse.typ"
+#include "../bilag/ordanalyse.typ"
 
 #pagebreak()
 == Domænemodel <bilag:domænemodel>
-#include "bilag/domænemodel.typ"
+#include "../bilag/domænemodel.typ"
 
 #pagebreak()
 == Spørgsmål til PO
 <bilag:spørgsmålTilPO>
-#include "bilag/spørgsmålTilPO.typ"
+#include "../bilag/spørgsmålTilPO.typ"
 
 #pagebreak()
 == LLM forslag til Use Cases <bilag:useCasesLLM>
-#include "bilag/llm_uc_forslag.typ"
+#include "../bilag/llm_uc_forslag.typ"
 
 #pagebreak()
 == Gantt diagram (faktisk) <bilag:Ganttdiagram>
-#include "bilag/Ganttdiagram.typ"
+#include "../bilag/Ganttdiagram.typ"
 
 #pagebreak()
 == Burndown Chart <bilag:BurndownChart>
-#include "bilag/BurndownChart.typ"
+#include "../bilag/BurndownChart.typ"
