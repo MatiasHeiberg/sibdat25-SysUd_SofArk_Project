@@ -31,13 +31,13 @@ softwarearkitektur",
 // --- BILAG SEKTION ---
 
 = Bilag <bilag-start> // Label used for splitting ToC
-/*
+
 // Custom Appendix Outline
 #outline(
-  title: "Bilagsliste",
+  title: none,
   target: heading.where(level: 2).after(<bilag-start>),
 )
-*/
+
 // Opsætning: Gør level 2 overskrifter til "Bilag X" format
 #set heading(numbering: (..nums) => {
   let vals = nums.pos()
@@ -65,3 +65,7 @@ softwarearkitektur",
 #pagebreak()
 == Domænemodel <bilag:domænemodel>
 #include "bilag/domænemodel.typ"
+
+#pagebreak()
+== LLM forslag til Use Cases <bilag:useCasesLLM>
+#include "bilag/llm_uc_forslag.typ"
