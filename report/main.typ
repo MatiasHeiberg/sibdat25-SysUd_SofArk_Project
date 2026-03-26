@@ -9,7 +9,7 @@
 softwarearkitektur",
   authors: ("Lasse Agerskov", "Anna Vognstoft", "Matias Heiberg Nielsen"),
   date: "Marts 2026",
-  toc-target: heading.where(level: 1).or(heading.where(level: 2).before(<bilag-start>)),
+  toc-target: heading.where(level: 1).or(heading.where(level: 2).before(<body-end>)),
   anslag: anslag,
 )
 
@@ -34,5 +34,5 @@ softwarearkitektur",
 = Litteraturliste
 #bibliography("references.bib", title: none)
 
-= Bilag <bilag-start>
+= Bilag <body-end>
 #include "sections/bilag.typ"
