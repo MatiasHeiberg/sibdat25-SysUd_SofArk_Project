@@ -17,7 +17,7 @@ softwarearkitektur",
 #include "sections/Opstart og projektstrategi.typ"
 = Planlægning og tidsestimering
 #include "sections/Planlægning og tidsestimering.typ"
-= Forløbet
+= Forløbet: elaboration-fasen
 #include "sections/Forløbet.typ"
 = Arkitektur og design
 #include "sections/Arkitektur og design.typ"
@@ -31,13 +31,13 @@ softwarearkitektur",
 // --- BILAG SEKTION ---
 
 = Bilag <bilag-start> // Label used for splitting ToC
-/*
+
 // Custom Appendix Outline
 #outline(
-  title: "Bilagsliste",
+  title: none,
   target: heading.where(level: 2).after(<bilag-start>),
 )
-*/
+
 // Opsætning: Gør level 2 overskrifter til "Bilag X" format
 #set heading(numbering: (..nums) => {
   let vals = nums.pos()

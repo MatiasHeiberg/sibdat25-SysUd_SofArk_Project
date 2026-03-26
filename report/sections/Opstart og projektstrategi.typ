@@ -1,5 +1,5 @@
 
-== Det kunstige problemdomæne
+== Det kunstige problemdomæne <sektion:detKunstigeProblemdomæne>
 Vores projekt har fokuseret på en case bestående af _Bostedet Tulipanvej_ der huser mentalt udfordrede borgere. Derudover tilbyder stedet bostøtte, hvilket er en støtteordning som borgerne modtager i hjemmet, som en overgang til at kunne bo selvstændigt i egen bolig. Vores domænekendskab bygger på en privat samtale vi havde med en specialpædagog, Laura, der arbejder i bostøtten. Ud fra den lærte vi at pædagogerne har ansvaret for at koordinere og planlægge bogerbesøgene og hvem der bruger deres begrænsede antal biler hvornår. Denne ad hoc koordinering er kritisk for arbejdsgangen, da de supportere borgere i hele Silkeborg kommune. Senere  modtog vi en SMS fra Laura (@bilag:sms), hvorfra vi kunne udlede:
 - 14 pædagoger
 - 4 cykler delt med botilbuddet
