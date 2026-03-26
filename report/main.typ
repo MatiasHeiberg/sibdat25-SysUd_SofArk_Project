@@ -65,3 +65,8 @@ softwarearkitektur",
 #pagebreak()
 == Domænemodel <bilag:domænemodel>
 #include "bilag/domænemodel.typ"
+
+#pagebreak()
+== Spørgsmål til PO
+<bilag:spørgsmålTilPO>
+#include "bilag/spørgsmålTilPO.typ"
