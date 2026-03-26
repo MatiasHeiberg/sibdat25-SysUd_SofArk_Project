@@ -19,7 +19,7 @@ softwarearkitektur",
 = Planlægning og tidsestimering
 #include "sections/Planlægning og tidsestimering.typ"
 
-= Forløbet
+= Elaboration
 #include "sections/Forløbet.typ"
 
 = Arkitektur og design
