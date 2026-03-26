@@ -7,16 +7,18 @@ Ovenstående er et godt eksempel på, hvordan patterns ofte kan genkendes i fors
 
 De arkitektoniske beslutninger vi traf undervejs i projektet har som oftest taget udgangspunkt i SOLID- og GRASP-principperne. De beslutninger der bliver beskrevet i afsnit 4.1 er drevet af et ønske om at overholde disse.
 
-En tidlig version af domæneklassen {Employee} viste et klart brud på Single Responsebility Principle, da den selv holdt en reference til sit repository:
+En tidlig version af domæneklassen `Bike` viste et klart brud på Single Responsebility Principle, da klassen selv oprettede sit repository med `new` direkte i konstruktøren:
 ```csharp
-public class Employee
+public class Bike : Vehicle
   {
-      private readonly EmployeeRepository _repository;
-      public Employee(EmployeeRepository repository) =>
-  _repository = repository;
+      private readonly BikeRepository _repository;
+      public Bike()
+      {
+        _repository = new BikeRepository();
+      }
   }
 ```
-Her havde `Employee` både til opgave at holde domænedata samt dataadgang.  Vi rettede dette brud på SRP ved at separere domæne- og IO-laget tydeligt fra hinanden, så dataadgang håndteres af repositories mens `Employee` udelukkende repræsenterer domænet.
+Her havde `Bike` både til opgave at holde domænedata samt håndtere dataadgang.  Vi rettede dette brud på SRP ved at separere domæne- og IO-laget tydeligt fra hinanden, så dataadgang håndteres af repositories mens `Bike` udelukkende repræsenterer domænet.
 
 Det er værd at bemærke, at vores implementering af 'Facade pattern' `AppFacade` bevidst bryder Open/closed-princippet.
 
@@ -29,7 +31,7 @@ public AppFacade(VehicleService vehicleService, BookingService bookingService)
     _bookingService = bookingService;
 }
 ```
-Dette er et kompromis vi bevidst har indgået da Facade-mønsterets formål netop er at samle services og holde præsentationslaget uvidende omkring dem. (NÆVN DX?)
+Dette er et kompromis vi bevidst har indgået da Facade-mønsterets formål netop er at samle services og holde præsentationslaget uvidende omkring dem. Hertil forbedrer det developer experience, ved at abstrahere vores service lag bag en samlet grænseflade.
 
 OCP var også den primære årsag til vores refactoring af vores Composite-pattern implementering `CompositeVehicleProvider` til den generiske `CompositeRepository<T>`.
 
@@ -57,4 +59,6 @@ Et andet problem vi løste under vores refaktorering var et direkte brud på Lis
 
 Vi har endvidere fokuseret på, at samle alle afhængigheder, som Dependency Inversion princippet foreskriver, i DI-roden i `App.xaml.cs`.
 
-I følge GRASP's Information Expert princip bør ansvar placeres der, hvor informationen befinder sig. `FileHandler<T>` er vores informationsekspert for filindlæsning, da den både filstien, typen og har ansvaret for at deserialisere.
+I følge GRASP's Information Expert princip bør ansvar placeres der, hvor informationen befinder sig. `FileHandler<T>` er vores informationsekspert for filindlæsning, da den kender filstien og typen samt har ansvaret for at deserialisere.
+
+Hele vores forløb har i høj grad været præget af design- og arkitekturvalg og det er i sær SOLID- og GRASP-principperne der har guidet os, både i vores oprindelige beslutninger men særledes også i vores refaktorering. Den tid det har krævet, at efterleve principperne korrekt, fremfor at levere funktionalitet, har igennem hele forløbet et diskussionsemne for os. Derfor, er det i sær dette forhold mellem designkvalitet og iterativ levering i en læringsmæssig kontekst som er udgangspunket for den følgende refleksion.
