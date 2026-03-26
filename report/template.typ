@@ -119,7 +119,23 @@
   pagebreak()
 
   // 6. INDHOLDSFORTEGNELSE
-  outline(depth: 2, indent: auto, target: toc-target)
+  heading("Indhold", outlined: false, numbering: none)
+  align(
+    center,
+    [
+      #block(
+        outline(
+          title: none,
+          depth: 2,
+          indent: auto,
+          target: toc-target,
+        ),
+        width: target-width,
+      )
+    ],
+  )
+
+
   pagebreak()
 
   // 7. HOVEDINDHOLD
