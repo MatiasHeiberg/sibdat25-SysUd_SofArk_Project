@@ -1,7 +1,7 @@
 #import "template.typ": project
 
 // --- KONFIGURATION AF FORMALIA ---
-#let anslag = 35460 // Ændres manuelt når rapporten er færdig
+#let anslag = 30526 // Ændres manuelt når rapporten er færdig
 
 // Anvender templaten på hele dokumentet
 #show: project.with(
@@ -15,70 +15,24 @@ softwarearkitektur",
 
 = Opstart og Projektstrategi
 #include "sections/Opstart og projektstrategi.typ"
+
 = Planlægning og tidsestimering
 #include "sections/Planlægning og tidsestimering.typ"
+
 = Forløbet
 #include "sections/Forløbet.typ"
+
 = Arkitektur og design
 #include "sections/Arkitektur og design.typ"
+
 = Diskussion
 #include "sections/Diskussion.typ"
+
 = Refleksion
 #include "sections/Refleksion.typ"
+
 = Litteraturliste
 #bibliography("references.bib", title: none)
 
-// --- BILAG SEKTION ---
-
-= Bilag <bilag-start> // Label used for splitting ToC
-
-// Custom Appendix Outline
-#outline(
-  title: none,
-  target: heading.where(level: 2).after(<bilag-start>),
-)
-
-// Opsætning: Gør level 2 overskrifter til "Bilag X" format
-#set heading(numbering: (..nums) => {
-  let vals = nums.pos()
-  if vals.len() == 2 {
-    // Level 2 (e.g., 8.1) vises som "Bilag A"
-    return "Bilag " + numbering("A", vals.at(1)) + " -"
-  }
-})
-
-// === C. INDSÆT DINE BILAG HERUNDER ===
-// Husk: Brug '==' for titel, og '#pagebreak()' før hver ny.
-
-#pagebreak()
-== SMS <bilag:sms>
-#include "bilag/sms.typ"
-
-#pagebreak()
-== Use Case Model <bilag:useCaseModel>
-#include "bilag/useCaseModel.typ"
-
-#pagebreak()
-== Ordanalyse <bilag:ordanalyse>
-#include "bilag/ordanalyse.typ"
-
-#pagebreak()
-== Domænemodel <bilag:domænemodel>
-#include "bilag/domænemodel.typ"
-
-#pagebreak()
-== Spørgsmål til PO
-<bilag:spørgsmålTilPO>
-#include "bilag/spørgsmålTilPO.typ"
-
-#pagebreak()
-== LLM forslag til Use Cases <bilag:useCasesLLM>
-#include "bilag/llm_uc_forslag.typ"
-
-#pagebreak()
-== Gantt diagram (faktisk) <bilag:Ganttdiagram>
-#include "bilag/Ganttdiagram.typ"
-
-#pagebreak()
-== Burndown Chart <bilag:BurndownChart>
-#include "bilag/BurndownChart.typ"
+= Bilag <bilag-start>
+#include "sections/bilag.typ"
