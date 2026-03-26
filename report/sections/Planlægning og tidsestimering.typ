@@ -2,7 +2,7 @@
 
 == Ordanalyse
 #include "sections/ordanalyse.typ"
-== Koncept model
+== Konceptmodel
 #include "sections/konceptModel.typ"
 == Use Case Model
 #include "sections/useCaseModel.typ"
