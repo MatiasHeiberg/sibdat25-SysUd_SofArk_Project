@@ -1,8 +1,17 @@
 == Andre Patterns
-=== Identificerede Gof-lignende patterns
+=== Identificerede GoF-lignende patterns
 Selvom vi primært implementerer Facade- og Composite-patterns i vores nuværende design, kan man identificere elementer, der minder om Strategy og Template Method. Man kan argumentere for, at vores Car- og Bike repositories benytter sig af en form for strategi, fordi `VehicleService` afhænger af `IRepository<IVehicle>` i stedet for konkrete datakilder, men adfærden varierer ikke, og der findes kun en metode `Load()`. I det klassiske pattern vil der typisk være flere alternative algoritmer, der gør noget forskelligt, hvilket giver langt større fleksibilitet end vores meget simple dataload. På samme måde fungerer vores `FileHandler<T>` som en slags template, da den har ansvar for filhåndteringen, mens subklasser som `CarRepository` og `BikeRepository` leverer specifikke detaljer, men mangler de abstrakte metoder, som det kræves i et standardiseret Template Method pattern. Helt klassisk definerer baseklassen (`FileHandler<T>`) abstrakte metoder, der overskrives af subklasserne. I vores design sikrer mønstret primært genbrug af kode og ikke en fleksibel mulighed for at variere adfærd.
 
 Ovenstående er et godt eksempel på, hvordan patterns ofte kan genkendes i forskellige former, selv når de ikke implementeres fuldt ud, og hvordan principperne som eksempelvis genbrugelig funktionalitet bliver anvendt, selvom det ikke slavisk følger Gof's klassiske syntaks.
+=== Fravalgte patterns
+I forbindelse med vores tidlige design, som tog udgangspunkt i IO-laget overvejede vi flere GoF-patterns inden vi landede på repository-løsningen.
+
+Vi undersøgte *Factory Pattern* til oprettelse af forskellige typer objekter fra vores datakilde. Men da vi allerede havde fastlagt os på udelukkende at arbejde med JSON-filer, vurderede vi at introduktionen Factory ville øge kompleksiteten så det ikke længere stod mål med behovet.
+
+Det var det samme ræsonnement der fik os til at fravælge *Adapter Pattern*. Vi overvejede at bruge det som en bro i mellem vores domænelag og et fremtidig datalager. Men da dette datalager slet ikke var i vores scope og for at undgå at størstedelen af vore designbeslutninger var taget af hensyn til mulige fremtidige udvidelser, besluttede vi os for at fokusere på at løse et reelt behov og ikke over-engineere vores system.
+
+Vi havde et behov for at håndtere vores lister med transportmidler der skulle vises i UI'et. I den forbindelse kom vi ind på brugen af *Singleton Pattern* til at sikre os, at kun én instans af samlingen eksistere på tværs af applikationen. Vi besluttede os dog for, at læse og skrive data ved hver ændring og derved gjorde det Singleton listen overflødig.
+
 == SOLID og GRASP
 
 De arkitektoniske beslutninger vi traf undervejs i projektet har som oftest taget udgangspunkt i SOLID- og GRASP-principperne. De beslutninger der bliver beskrevet i afsnit 4.1 er drevet af et ønske om at overholde disse.
