@@ -3,7 +3,7 @@
 == Facade Pattern
 Efterhånden som servicelaget tog form, opstod spørgsmålet, om hvordan præsentationslaget skulle kommunikere med det. Vores diskussioner tog udgangspunkt i MVC versus MVVM, hvilket vi vurderede lå uden for vores scope og samtidig ikke bidrag med yderligere design patterns med henblik på opgavekravene. I stedet valgte vi at indføre AppFacade som et enkelt kontaktpunkt.
 
-Med indførelsen af AppFacade kunne vi derved undgå den direkte kobling mellem præsentationslaget og de enkelte servies. Dertil bidrog det også til at forbedre developer experience, da man derved undgår den sideløbende tilpasning i takt med fremtidig udvidelse.
+Med indførelsen af AppFacade kunne vi derved undgå den direkte kobling mellem præsentationslaget og de enkelte servies. Dertil bidrog det også til at forbedre developer experience, da man derved undgår at skulle tilpasse `MainWindow` i takt med nye services tilføjes. Det bevidste trade-off ift. Open/Closed-princippet behandles i afsnit 5.2.
 
 ```csharp
 public class AppFacade
@@ -40,7 +40,7 @@ Dette giver et renere og mere udviklervenligt præsentationslag, da `MainWindow`
  }
 ```
 
-Derved kan alle afhængigheder flyttes over i DI-roden i `App.xml.cs` i overensstemmelse med Dependency
+Derved kan alle afhængigheder flyttes over i DI-roden i `App.xaml.cs` i overensstemmelse med Dependency
 Inversion princippet.
 ```csharp
 public partial class App : Application
@@ -65,4 +65,4 @@ public partial class App : Application
 ```
 Her oprettes repositories, services og `AppFacade` hvorefter `MainWindow` modtager facaden i dens konstruktør.
 
-Det bevidste trade-off ift. Open/Closed-princippet behandles i afsnit 5.2.
+Ved at centrerere alle afhængigheder i DI-roden opnås en klar adskildelse af systemets lag: filsystemet kendes kun af repositories, services kendes kun af `AppFacade` og præsentationslaget kender kun til facaden. Tilsammen udgør Composite- og Facade-pattern fundamentet for systemets arkitektur.

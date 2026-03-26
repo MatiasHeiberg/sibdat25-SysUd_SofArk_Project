@@ -3,7 +3,7 @@
 Selvom vi primært implementerer Facade- og Composite-patterns i vores nuværende design, kan man identificere elementer, der minder om Strategy og Template Method. Man kan argumentere for, at vores Car- og Bike repositories benytter sig af en form for strategi, fordi `VehicleService` afhænger af `IRepository<IVehicle>` i stedet for konkrete datakilder, men adfærden varierer ikke, og der findes kun en metode `Load()`. I det klassiske pattern vil der typisk være flere alternative algoritmer, der gør noget forskelligt, hvilket giver langt større fleksibilitet end vores meget simple dataload. På samme måde fungerer vores `FileHandler<T>` som en slags template, da den har ansvar for filhåndteringen, mens subklasser som `CarRepository` og `BikeRepository` leverer specifikke detaljer, men mangler de abstrakte metoder, som det kræves i et standardiseret Template Method pattern. Helt klassisk definerer baseklassen (`FileHandler<T>`) abstrakte metoder, der overskrives af subklasserne. I vores design sikrer mønstret primært genbrug af kode og ikke en fleksibel mulighed for at variere adfærd.
 
 Ovenstående er et godt eksempel på, hvordan patterns ofte kan genkendes i forskellige former, selv når de ikke implementeres fuldt ud, og hvordan principperne som eksempelvis genbrugelig funktionalitet bliver anvendt, selvom det ikke slavisk følger Gof's klassiske syntaks.
-=== SOLID og GRASP
+== SOLID og GRASP
 
 De arkitektoniske beslutninger vi traf undervejs i projektet har som oftest taget udgangspunkt i SOLID- og GRASP-principperne. De beslutninger der bliver beskrevet i afsnit 4.1 er drevet af et ønske om at overholde disse.
 
