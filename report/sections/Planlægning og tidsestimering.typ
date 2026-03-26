@@ -6,7 +6,7 @@
 #include "sections/konceptModel.typ"
 == Use Case Model
 #include "sections/useCaseModel.typ"
-- Use Case Workshop
+// Use Case Workshop
 == Risikoliste
 #include "sections/riskList.typ"
 == Iterations plan
