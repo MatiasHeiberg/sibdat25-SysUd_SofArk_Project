@@ -13,7 +13,7 @@ Det kunstige scenarie tvang os til at reflektere over, hvordan man arbejder agil
 
 Vi valgte at forblive tro mod den agile tankegang og gennemføre analysen uden forudindtagede begrænsninger. For at håndtere det begrænsede scope i praksis, inddrog vi det som en faktor i vores prioritering frem for i analysen. Konkret betød det, at use cases der lå uden for realistisk rækkevidde, blev tildelt en høj værdi på _Cost_-aksen i vores _value-driven_ prioritering. Derved sikrede vi, at prioriterings-scoren naturligt sorterede urealistiske krav fra, samtidig med at vi opretholdt retten til pragmatisk at ekskludere use cases, der trods en favorabel score ikke kunne rummes inden for tidsrammen.
 
-== Projekt- og iterationsstruktur \ *(tilføj gantt vs burndown)*
+== Projekt- og iterationsstruktur
 Vi tilrettelagde en intensiv Inception-fase over to dage for at etablere domæneforståelse og prioritere krav. Grundet gruppens begrænsede erfaring med WPF planlagde vi tre korte iterationer á to dage for hurtigt at kunne evaluere tekniske valg. Vi besluttede også at hver iteration skulle implementere use cases i vertikale slices frem for at fokuserer på at fuldende et lag af gangen. Den tilgang kaldes også for _tracer bullets_ @thomasPragmaticProgrammerYour2020 af den årsag at feedback cyklussen bliver forkortet hvilket skulle hjælpe os med hurtigt at kunne vurdere vores design- og implementering. Særdeles ift. WPF som var ny teknologi for os.
 
 Vi besluttede at processtyringen skulle forankres i opsamlingsmøder i slutningen af hver iteration der naturligt skulle føre videre til planlægningen af den næste iteration. I den forbindelse diskuterede vi også om vi skulle kontrollere vores produktivitet med et Gantt- eller Burndown-diagram.
