@@ -12,10 +12,8 @@
 == Value- og risikodrevet <sektion:riskValueDriven>
 #include "sections/valueRiskDriven.typ"
 
-== Backlog
+== Backlog og Iterationsplan
 #include "sections/backlog.typ"
 
-== Iterations plan
-#include "sections/iterationPlan.typ"
 
 
