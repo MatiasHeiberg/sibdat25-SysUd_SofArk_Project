@@ -1,4 +1,4 @@
-Vi brugte artefaktet Use Case Model til at kortlægge de user goals som vi kunne identificere ud fra den lille indsigt vi havde fået i domænet (se @sektion:detKunstigeProblemdomæne) samt vores koncepmodel. Formålet var at ende med en kravsspecifikation som vi kunne risikovurdere, prioritere- og planlægge vores projekt ud fra. For at komme i mål med dette, og få et overblik, lavede vi en plan for resten af inceptionsfasen. Den første halvdel af den plan bestod af en Use Case Workshop der indeholdte disse trin:
+Vi brugte artefaktet Use Case Model til at kortlægge de user goals som vi kunne identificere ud fra den lille indsigt vi havde fået i domænet (se @sektion:detKunstigeProblemdomæne) samt vores koncepmodel. Formålet var at ende med en kravsspecifikation som vi kunne risikovurdere, prioritere- og planlægge vores projekt ud fra. For at komme i mål med dette, og få et overblik, lavede vi en plan for resten af inceptionsfasen. Den første halvdel af den plan bestod af en Use Case Workshop der indeholdte disse trin: <inceptionplan>
 + Lav en bruttoliste bestående af use case titler
 + Udvid dem alle til brief format
 + Ranger dem ud fra risiko- og værdiskabelse.
