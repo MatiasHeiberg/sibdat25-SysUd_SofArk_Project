@@ -7,11 +7,11 @@ Vores konceptuelle tilgang til taskformulering, samt beslutningen om at arbejde 
 
 *Iteration 1 (16.-17. marts) - UC2 (24 story points):*
 
-De definerede tasks varierede både i kompleksitet og detaljegrad. Selvom de mest abstrakte tasks (f.eks. "Opret Bookingfunktion") var frasorteret på dette tidspunkt, viste det sig at de resterende tasks dække over større tekniske beslutninger end forventet.
+De definerede tasks varierede både i kompleksitet og detaljegrad. Selvom de mest abstrakte tasks (f.eks. "Opret Bookingfunktion") var frasorteret på dette tidspunkt, viste det sig at de resterende tasks dækkede over større tekniske beslutninger end forventet.
 
 Vi prioriterede derfor de mest håndgribelige tasks: "Brugerdata" og "Håndter data for transportmidler". Disse tasks, som oprindeligt var estimeret til 2 story points hver, kom reelt til at udgøre hovedparten af iterationen.
 
-Implementeringen af bruger- og køretøjsdata dækkede reelt over et helt lag af beslutninger hveriblandt filformat, serialisering, repository-pattern og interfacedesign. Som følge heraf blev selve implementeringen først påbegyndt d. 17. marts efter vi havde fastalgt en lagdelt arkitektur bestående af Domæne-, IO- og Services-lag.
+Implementeringen af bruger- og køretøjsdata dækkede reelt over et helt lag af beslutninger heriblandt filformat, serialisering, repository-pattern og interfacedesign. Som følge heraf blev selve implementeringen først påbegyndt d. 17. marts efter vi havde fastalgt en lagdelt arkitektur bestående af Domæne-, IO- og Services-lag.
 
 Den efterfølgende task, "Se ledige køretøjer", blev påbegyndt med henblik på at indrage præsentationslaget. Tasken var estimeret til 8 story points, men blev kun delvist implementeret inden for iterationen. Vi besluttede derfor at lade denne task fortsætte ind i næste iteration.
 
