@@ -1,3 +1,8 @@
 == Agil metode i et læringsscenarie
+SOLID- og GRASP-principperne hjalp os med at træffe bevidste designvalg i vores system, men refleksionen over processen kom til at fylde en betydelig del i selve projektforløbet. Vi havde en ambition om at være tro mod UP-tilgangen og arbejde agilt, men i så kort et projektforløb blev det svært at opretholde en stringent metodisk praksis - iterationerne krævede mere tid, end vi havde til rådighed, og samtidig manglede vi mere afklarende domæneviden at bygge vores use cases og senere task-formuleringer på. Den centrale udfordring blev et halvkunstigt domæne uden fastsatte regler og retningslinjer, som der typisk ville være afklaret gennem løbende kommunikation med en klient.
+
 == Task-formuleringer
-//se afslutning på forrige afsnit
+Fordi meget at vores domæneklarlægning og use case-arbejde var baseret på en kort besked fra PO, blev taskformuleringerne for vagt beskrevet, og det gjorde det iterative arbejde svært, da vi af den grund blev upræcise i hele estimeringen af tid for disse. Som vi noterede efter vejledning, manglede vi erfaring med at formulere tasks på et konceptuelt niveau med et klart formål og en tydelig afgrænsning af business rules, så de i virkeligheden fremstår som logiske opgaver uden de bliver tekniskfunderede.
+En læring vi tager med os fra dette er, at et kort projekt med et uklart domæne med fordel kan have gavn af et eksplicit 'trin 0', hvor gruppen fastlægger regler og begreber for domænet. Disse kan man så ændre iterativt, når ny viden opstår. På den måde kan man arbejde mere agilt, men med en mere realistisk tilgang, der tager højde for læring og usikkerhed.
+
+
