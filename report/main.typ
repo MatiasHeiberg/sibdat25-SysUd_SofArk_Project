@@ -1,13 +1,13 @@
 #import "template.typ": project
 
 // --- KONFIGURATION AF FORMALIA ---
-#let anslag = 21823 // Ændres manuelt når rapporten er færdig
+#let anslag = 31436 // Ændres manuelt når rapporten er færdig
 
 // Anvender templaten på hele dokumentet
 #show: project.with(
   title: "Systemudvikling og
 softwarearkitektur",
-  authors: ("Fornavn Efternavn", "Fornavn Efternavn", "Fornavn Efternavn"),
+  authors: ("Lasse Agerskov", "Anna Vognstoft", "Matias Heiberg Nielsen"),
   date: "Marts 2026",
   toc-target: heading.where(level: 1).or(heading.where(level: 2).before(<bilag-start>)),
   anslag: anslag,
@@ -31,13 +31,13 @@ softwarearkitektur",
 // --- BILAG SEKTION ---
 
 = Bilag <bilag-start> // Label used for splitting ToC
-/*
+
 // Custom Appendix Outline
 #outline(
-  title: "Bilagsliste",
+  title: none,
   target: heading.where(level: 2).after(<bilag-start>),
 )
-*/
+
 // Opsætning: Gør level 2 overskrifter til "Bilag X" format
 #set heading(numbering: (..nums) => {
   let vals = nums.pos()
@@ -67,6 +67,19 @@ softwarearkitektur",
 #include "bilag/domænemodel.typ"
 
 #pagebreak()
+<<<<<<< HEAD
 == Spørgsmål til PO
 <bilag:spørgsmålTilPO>
 #include "bilag/spørgsmålTilPO.typ"
+=======
+== LLM forslag til Use Cases <bilag:useCasesLLM>
+#include "bilag/llm_uc_forslag.typ"
+
+#pagebreak()
+== Gantt diagram (faktisk) <bilag:Ganttdiagram>
+#include "bilag/Ganttdiagram.typ"
+
+#pagebreak()
+== Burndown Chart <bilag:BurndownChart>
+#include "bilag/BurndownChart.typ"
+>>>>>>> b6cec3b2dd3fc9a88653bce5db772d8a2a614893
