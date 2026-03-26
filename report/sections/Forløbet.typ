@@ -5,9 +5,9 @@ Allerede på første dag af iteration 1 (mandag d. 16 marts) stod det klart, at 
 
 Vores konceptuelle tilgang til taskformulering, samt beslutningen om at arbejde med vertikale slices @larmanApplyingUMLPatterns medførte at mange arkitektoniske beslutninger skulle træffes tidligt i forløbet.
 
-Iteration 1 (16.-17. marts) - UC2 (24 story points):
+*Iteration 1 (16.-17. marts) - UC2 (24 story points):*
 
-De definerede tasks (SE BILAG X(MÅSKE?)) varierede både i kompleksitet og detaljegrad. Selvom de mest abstrakte tasks (f.eks. "Opret Bookingfunktion") var frasorteret på dette tidspunkt, viste det sig at de resterende tasks dække over større tekniske beslutninger end forventet.
+De definerede tasks varierede både i kompleksitet og detaljegrad. Selvom de mest abstrakte tasks (f.eks. "Opret Bookingfunktion") var frasorteret på dette tidspunkt, viste det sig at de resterende tasks dække over større tekniske beslutninger end forventet.
 
 Vi prioriterede derfor de mest håndgribelige tasks: "Brugerdata" og "Håndter data for transportmidler". Disse tasks, som oprindeligt var estimeret til 2 story points hver, kom reelt til at udgøre hovedparten af iterationen.
 
@@ -15,7 +15,8 @@ Implementeringen af bruger- og køretøjsdata dækkede reelt over et helt lag af
 
 Den efterfølgende task, "Se ledige køretøjer", blev påbegyndt med henblik på at indrage præsentationslaget. Tasken var estimeret til 8 story points, men blev kun delvist implementeret inden for iterationen. Vi besluttede derfor at lade denne task fortsætte ind i næste iteration.
 
-Iteration 2 (18.-24. marts) - UC2 (fortsat)
+*Iteration 2 (18.-24. marts) - UC2 (fortsat)*
+
 Den oprindelig plan for Iteration 2 var at arbejde med UC3 (Book transportmiddel). Vi vurderede dog, at det var uhensigtsmæssigt, at implementere bookinglogik på et fundament vi ikke var tilfredse med. Derfor blev de tilbageværende tasks videreført til iteration 2.
 
 I perioden onsdag d. 18 marts til fredag d. 20 marts blev tiden brugt på refactoring af arkitekturen. Dette arbejde var ikke direkte task-drevet og bidrog til yderligere forskydning i tidsplanen.
