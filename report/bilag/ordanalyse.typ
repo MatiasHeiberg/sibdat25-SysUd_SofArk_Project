@@ -1,12 +1,4 @@
----
-created: 2026-03-12
-section: Inception
-exclude: false
-sortKey: 0.42548
----
-Med udgangspunkt i [[Svar fra Klient]]
-
-## Entiteter/substantiver
+Entiteter/substantiver
 - Medarbejder
 - Cykel
 - Bil (firma og privat)
@@ -22,10 +14,9 @@ Med udgangspunkt i [[Svar fra Klient]]
 - Retningslinjer (booking regler)
 - Borger-deling
 
-## Handlinger/verber
+Handlinger/verber
 - Koordinere
 - Besøger
 - Cykler
 - Kører
 - Booker
-- 
