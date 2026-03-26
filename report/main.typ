@@ -1,7 +1,7 @@
 #import "template.typ": project
 
 // --- KONFIGURATION AF FORMALIA ---
-#let anslag = 33488 // Ændres manuelt når rapporten er færdig
+#let anslag = 40700 // Ændres manuelt når rapporten er færdig
 
 // Anvender templaten på hele dokumentet
 #show: project.with(
