@@ -1,13 +1,13 @@
 #import "template.typ": project
 
 // --- KONFIGURATION AF FORMALIA ---
-#let anslag = 21823 // Ændres manuelt når rapporten er færdig
+#let anslag = 24826 // Ændres manuelt når rapporten er færdig
 
 // Anvender templaten på hele dokumentet
 #show: project.with(
   title: "Systemudvikling og
 softwarearkitektur",
-  authors: ("Fornavn Efternavn", "Fornavn Efternavn", "Fornavn Efternavn"),
+  authors: ("Lasse Agerskov", "Anna Vognstoft", "Matias Heiberg Nielsen"),
   date: "Marts 2026",
   toc-target: heading.where(level: 1).or(heading.where(level: 2).before(<bilag-start>)),
   anslag: anslag,
