@@ -1,0 +1,31 @@
+
+Spørgsmål til PO
+created
+
+12-03-2026
+section
+Process
+exclude
+
+3. marts - torsdag
+Bostøtte vs botilbud
+
+Hvad er retningslinjerne
+
+Koordinering mellem kollegaer og/eller beboer
+
+Pædagogiske specialister til bestemte borgere
+
+8 transportmidler til 14 medarbejdere, hvad med de sidste 6 medarbejdere
+
+Outlook booking, er det via kalender events
+
+Bliver en borger besøgt mere end en gang dagligt
+
+Er borgerlisten ens hver dag
+
+Er en borgers antal besøg variabel
+
+Hvordan fungerer det at bruge Outlook til koordinering
+
+Har i en fast tidsramme for hvert besøg
