@@ -55,7 +55,9 @@ public abstract class FileHandler<T> : IRepository<T>
 {
     private readonly string _path;
 
-    protected FileHandler(string path) => _path = path;
+    protected string Path => _path;
+
+    public FileHandler(string path) => _path = path;
 
     public IEnumerable<T> Load()
     {
@@ -63,22 +65,24 @@ public abstract class FileHandler<T> : IRepository<T>
 
         // Stærk typning bevares her:
         // CarRepository -> List<Car> og BikeRepository -> List<Bike>
-        return JsonSerializer.Deserialize<List<T>>(text)!;
+        return JsonSerializer.Deserialize<List<T>>(text);
     }
 }
 
-public sealed class CarRepository : FileHandler<Car>
+public class CarRepository : FileHandler<Car>
 {
     public CarRepository(string path) : base(path) { }
 }
 
-public sealed class BikeRepository : FileHandler<Bike>
+public class BikeRepository : FileHandler<Bike>
 {
     public BikeRepository(string path) : base(path) { }
 }
+```
 
-// Kovarians gør det lovligt at IRepository<Car>
-// og IRepository<Bike> kan opkastes til IRepository<IVehicle>
+Kovarians gør det lovligt at IRepository<Car> og IRepository<Bike> kan opkastes til IRepository<IVehicle>. Eksempelvist kunne man gøre:
+
+```cs
 IEnumerable<IRepository<IVehicle>> repos =
 [
     new CarRepository("Data\\Car.json"),

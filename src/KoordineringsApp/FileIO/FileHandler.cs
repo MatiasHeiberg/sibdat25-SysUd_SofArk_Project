@@ -15,17 +15,13 @@ namespace KoordineringsApp.FileIO
     public abstract class FileHandler<T> : IRepository<T>
     {
         private readonly string _path;
-
+        protected string Path => _path;
         /// <summary>
         /// Initialiserer en ny filhåndtering for en specifik filsti.
         /// </summary>
         /// <param name="path">Stien til JSON-filen.</param>
         public FileHandler(string path) => _path = path;
 
-        /// <summary>
-        /// Den konfigurerede filsti til datafilen.
-        /// </summary>
-        protected string Path => _path;
 
         /// <summary>
         /// Læser og deserialiserer alle poster fra den konfigurerede JSON-fil.
