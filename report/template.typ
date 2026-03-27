@@ -45,10 +45,11 @@
   show enum: limit-width
   show terms: limit-width
   show bibliography: limit-width
+  show outline: limit-width
 
   // 3. OVERSKRIFTER
 
-  set heading(numbering: "1.1")
+  set heading(numbering: "1.1", supplement: none)
   show heading: it => {
     // Sørg for pagebreak ved level 1
     if it.level == 1 {
@@ -71,8 +72,11 @@
   }
 
   // 4. KODE BLOKKE
+  show raw.where(block: true): set raw(theme: "assets/themes/vs-dark.tmTheme")
+  show raw.where(block: true): set text(fill: rgb("#d4d4d4"))
   show raw.where(block: true): block.with(
-    fill: luma(240),
+    fill: rgb("#1e1e1e"),
+    stroke: rgb("#3c3c3c"),
     inset: 10pt,
     radius: 4pt,
     width: 100%,
@@ -99,7 +103,11 @@
     // Semester info
     Teknisk Rapport \
     Datamatiker uddannelsen \
-    #datetime.today().display("[day]. [month repr:long] [year]")
+    #datetime.today().display("[day]. [month repr:long] [year]") \
+    #link("https://github.com/MatiasHeiberg/sibdat25-SysUd_SofArk_Project", underline[*GitHub*])
+
+
+
 
     #v(2em)
 
@@ -119,37 +127,61 @@
   pagebreak()
 
   // 6. INDHOLDSFORTEGNELSE
-  outline(depth: 2, indent: auto, target: toc-target)
+  heading("Indhold", outlined: false, numbering: none)
+  outline(
+    title: none,
+    depth: 2,
+    indent: auto,
+    target: toc-target,
+  )
+
   pagebreak()
 
   // 7. HOVEDINDHOLD
+  // Sidetal: Brødtekst vises som x/y, bilag vises som romertal fra appendix-pages-start.
 
-  // Nulstil sidetal for brødteksten
-  counter(page).update(1)
-
-  // Sidetalsformat i footeren: "Aktuel / Total (Brødtekst)"
-  // Sidetal i ToC (numbering): "1"
   set page(
-    numbering: "1",
-    footer: context {
-      let page-num = counter(page).get().first()
-      let start-locs = query(<body-start>)
-      let end-locs = query(<bilag-start>)
+    numbering: (..nums) => {
+      let n = nums.pos().first()
+      let body_start = query(<body-start>)
+      let appendix_pages_start = query(<appendix-pages-start>)
 
-      if start-locs.len() > 0 and end-locs.len() > 0 {
-        let start-page = start-locs.first().location().page()
-        let end-page = end-locs.first().location().page()
-        let total-body-pages = end-page - start-page
-
-        if page-num <= total-body-pages {
-          align(center, str(page-num) + " / " + str(total-body-pages))
-        } else {
-          // Ingen sidetal på bilagssider
-          none
-        }
+      if body_start.len() == 0 {
+        str(n)
       } else {
-        // Fallback
-        align(center, str(page-num))
+        let body_start_page = body_start.first().location().page()
+
+        if appendix_pages_start.len() == 0 or n < appendix_pages_start.first().location().page() {
+          let body_page = n - body_start_page + 1
+          str(body_page)
+        } else {
+          let app_start_page = appendix_pages_start.first().location().page()
+          let app_page = n - app_start_page + 1
+          numbering("I", app_page)
+        }
+      }
+    },
+    footer: context {
+      let n = counter(page).get().first()
+      let body_start = query(<body-start>)
+      let body_end = query(<body-end>)
+      let appendix_pages_start = query(<appendix-pages-start>)
+
+      if body_start.len() == 0 or body_end.len() == 0 {
+        align(center, str(n))
+      } else {
+        let body_start_page = body_start.first().location().page()
+        let body_end_page = body_end.first().location().page()
+        let total_body_pages = body_end_page - body_start_page + 1
+
+        if appendix_pages_start.len() == 0 or n < appendix_pages_start.first().location().page() {
+          let body_page = n - body_start_page + 1
+          align(center, str(body_page) + "/" + str(total_body_pages))
+        } else {
+          let app_start_page = appendix_pages_start.first().location().page()
+          let app_page = n - app_start_page + 1
+          align(center, numbering("I", app_page))
+        }
       }
     },
   )

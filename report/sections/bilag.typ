@@ -1,7 +1,9 @@
 // Custom Appendix Outline
 #outline(
   title: none,
-  target: heading.where(level: 2).after(<bilag-start>),
+  depth: 2,
+  indent: auto,
+  target: heading.where(level: 2).after(<body-end>),
 )
 
 // Opsætning: Gør level 2 overskrifter til "Bilag X" format
@@ -9,7 +11,7 @@
   let vals = nums.pos()
   if vals.len() == 2 {
     // Level 2 (e.g., 8.1) vises som "Bilag A"
-    return "Bilag " + numbering("A", vals.at(1)) + " -"
+    return "Bilag " + numbering("A", vals.at(1))
   }
 })
 
@@ -17,6 +19,7 @@
 // Husk: Brug '==' for titel, og '#pagebreak()' før hver ny.
 
 #pagebreak()
+#metadata("Appendix numbering start") <appendix-pages-start>
 == SMS <bilag:sms>
 #include "../bilag/sms.typ"
 
@@ -48,3 +51,5 @@
 #pagebreak()
 == Burndown Chart <bilag:BurndownChart>
 #include "../bilag/BurndownChart.typ"
+
+<bilag-end>

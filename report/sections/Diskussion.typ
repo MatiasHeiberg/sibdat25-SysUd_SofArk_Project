@@ -16,8 +16,10 @@ Vi havde et behov for at håndtere vores lister med transportmidler, der skulle 
 
 De arkitektoniske beslutninger vi traf undervejs i projektet har som oftest taget udgangspunkt i SOLID- og GRASP-principperne. De beslutninger, der bliver beskrevet i afsnit 4.1, er drevet af et ønske om at overholde disse.
 
+
 En tidlig version af domæneklassen `Bike` viste et klart brud på Single Responsibility Principle, da klassen selv oprettede sit repository med `new` direkte i konstruktøren:
-```csharp
+
+```cs
 public class Bike : Vehicle
   {
       private readonly BikeRepository _repository;
@@ -33,7 +35,7 @@ Det er værd at bemærke, at vores implementering af Facade pattern med `AppFaca
 
 Hver gang en ny service tilføjes, kræver det ændring af konstruktør og metodeliste:
 
-```csharp
+```cs
 public AppFacade(VehicleService vehicleService, BookingService bookingService)
 {
     _vehicleService = vehicleService;
@@ -46,7 +48,7 @@ OCP var også den primære årsag til vores refaktorering af vores Composite pat
 
 Med den generiske løsning kan vi tilføje en `BookingRepository` uden at ændre anden kode:
 
-```csharp
+```cs
 public class BookingRepository : FileHandler<Booking>
   {
       public BookingRepository(string path) : base(path)
@@ -57,7 +59,7 @@ public class BookingRepository : FileHandler<Booking>
 
 Herefter kan den bruges direkte med den eksisterende `CompositeRepository<T>`:
 
-```csharp
+```cs
 IEnumerable<IRepository<Booking>> repos = [new BookingRepository("Data\\Booking.json")];
 var compositeBookingRepo = new CompositeRepository<Booking>(repos);
 ```
