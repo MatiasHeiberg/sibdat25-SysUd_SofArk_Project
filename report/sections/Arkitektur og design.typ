@@ -1,3 +1,4 @@
+#import "../template.typ": target-width
 == Composite Pattern
 #include "sections/Composite Pattern.typ"
 == Facade Pattern
@@ -65,4 +66,22 @@ public partial class App : Application
 ```
 Her oprettes repositories, services og `AppFacade`, hvorefter `MainWindow` modtager facaden i dens konstruktør.
 
+#figure(
+  image(
+    "../assets/Klassediagrammer/Klassediagram (Facade).png",
+    width: target-width,
+  ),
+  caption: [Klassediagram - Facade Pattern],
+)
+
 Ved at centrere alle afhængigheder i DI-roden opnås en klar adskillelse af systemets lag: filsystemet kendes kun af repositories, services kendes kun af `AppFacade` og præsentationslaget kender kun til facaden. Tilsammen udgør Composite- og Facade-pattern fundamentet for systemets arkitektur.
+
+== Fuldt systemdesign
+Nedenstående diagram samler begge patterns og viser hele systemets lagdelte struktur fra præsentationslaget ned igennem facade- og servicelaget til repositories og domænet.
+#figure(
+  image(
+    "../assets/Klassediagrammer/Klassediagram final.png",
+    width: target-width,
+  ),
+  caption: [Klassediagram - Fuldt systemdesign],
+)
