@@ -12,7 +12,7 @@ De definerede tasks varierede både i kompleksitet og detaljegrad. Selvom de mes
 
 Vi prioriterede derfor de mest håndgribelige tasks: "Brugerdata" og "Håndter data for transportmidler". Disse tasks, som oprindeligt var estimeret til 2 story points hver, kom reelt til at udgøre hovedparten af iterationen.
 
-Implementeringen af bruger- og køretøjsdata dækkede reelt over et helt lag af beslutninger - heriblandt filformat, serialisering, repository-pattern og interfacedesign. Som følge heraf blev selve implementeringen først påbegyndt d. 17. marts, efter vi havde fastlagt en lagdelt arkitektur bestående af domæne-, IO- og Servicelag. Det resulterede i følgende klassediagram:
+Implementeringen af bruger- og køretøjsdata dækkede reelt over et helt lag af beslutninger - heriblandt filformat, serialisering, repository-pattern og interfacedesign. Som følge heraf blev selve implementeringen først påbegyndt d. 17. marts, efter vi havde fastlagt en lagdelt arkitektur bestående af domæne-, IO- og Servicelag. Med implementeringen fra iterationen resulterede det i følgende klassediagram:
 
 #figure(
   image(

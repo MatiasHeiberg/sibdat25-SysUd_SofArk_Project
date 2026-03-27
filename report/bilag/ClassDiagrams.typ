@@ -8,7 +8,7 @@
 #figure(
   caption: [Diagram med Composite Pattern],
   image("../assets/Klassediagrammer/Klassediagram v2.png"),
-)
+) <bilag:compositeDiagramV1>
 
 #figure(
   caption: [Diagram med refactored Composite Pattern],
