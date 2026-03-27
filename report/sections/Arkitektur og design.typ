@@ -40,7 +40,7 @@ Dette giver et renere og mere udviklervenligt præsentationslag, da `MainWindow`
  }
 ```
 
-Derved kan alle afhængigheder flyttes over i DI-roden i `App.xaml.cs` i overensstemmelse med Dependency
+Derved kan alle afhængigheder flyttes over i DI-roden i `App.xaml.cs` i overensstemmelse med Dependency Inversion-princippet.
 
 ```cs
 public partial class App : Application
