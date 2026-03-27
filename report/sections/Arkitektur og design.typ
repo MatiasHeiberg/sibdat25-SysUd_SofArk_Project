@@ -77,7 +77,7 @@ Her oprettes repositories, services og `AppFacade`, hvorefter `MainWindow` modta
 Ved at centrere alle afhængigheder i DI-roden opnås en klar adskillelse af systemets lag: filsystemet kendes kun af repositories, services kendes kun af `AppFacade` og præsentationslaget kender kun til facaden. Tilsammen udgør Composite- og Facade-pattern fundamentet for systemets arkitektur.
 
 == Fuldt systemdesign
-Nedenstående diagram samler begge patterns og viser hele systemets lagdelte struktur fra præsentationslaget ned igennem facade- og servicelaget til repositories og domænet.
+Nedenstående diagram samler begge patterns og viser hele systemets lagdelte struktur fra præsentationslaget ned igennem facade- og servicelaget til repositories og domænet. I den nuværende implementering understøtter systemet udelukkende visning af en samlet liste over `Car`- og `Bike`-objekter indlæst fra JSON-filer. Arkitekturen er dog designet til at kunne udvides — en fremtidig `BookingRepository` eller et nyt transportmiddel kan tilføjes uden ændringer i de eksisterende lag.
 #figure(
   image(
     "../assets/Klassediagrammer/Klassediagram final.png",
