@@ -1,7 +1,5 @@
-
-
 I vores første iteration af projektet var udgangspunktet UC2 (Se ledige transportmidler for et bestemt tidspunkt). For at kunne estimere implementeringen mere præcist foldede vi den ud, så den blev flere mindre tasks. Vi oprettede domæneklasser for Car, Bike og Employee og dertilhørende JSON-filer. For at sikre en så fleksibel og vedligeholdelsesvenlig arkitektur som muligt, valgte vi at implementere et repository pattern. Formålet var at abstrahere dataadgangen, så servicelaget ikke er direkte afhængigt af datakilden. Repositories kan virke overflødige i vores indtil nu simple system, men gør det skalerbart til en fremtidig database som datakilde uden at skulle ændre logik i vores servicelag. Samtidig bidrager det til at holde vores domæneklasser rene og fri for datalagringslogik. Vi introducerede nu interfacet `IRepository<T>`, fordi vi havde flere repositories med ens funktionalitet - de læser JSON-filerne og deserialiserer dem til objekter. For at undgå gentagelse oprettede vi den abstrakte `FileHandler`-klasse, som de tre konkrete repositories nedarver fra. Til at starte med implementerede vi en superklasse, `BaseVehicleRepository`, som `CarRepository` og `BikeRepository` nedarvede fra. Den blev introduceret for at samle fælles funktionalitet for transportmidler, mens selve polymorfien blev håndteret gennem `IVehicleProvider`, hvor konkrete typer blev opcastet til `IVehicle`. Med introduktionen af interfacet `IVehicleProvider` blev ansvaret flyttet væk fra superklassen, da det var interfacet, som `VehicleService` afhang af. Vores baseklasse gjorde det dog stadig muligt at genbruge logik mellem repositories.
-I vores første iteration af projektet var udgangspunktet #link(<UC2>, underline[UC2]) (Se ledige transportmidler for et bestemt tidspunkt). For at kunne estimere implementeringen mere præcist, foldede vi den ud, så den blev flere mindre tasks. Vi oprettede domæneklasser for Car, Bike og Employee og dertilhørende JSON-filer. For at sikre en så fleksibel og vedligeholdelsesvenlig arkitektur som muligt, valgte vi at implementere et repository pattern. Formålet var at abstrahere dataadgangen, så servicelaget ikke har direkte afhængighed til datakilden. Repositories kan virke overflødigt i vores indtil nu simple system, men gør det skalerbart til en fremtidig database som datakilde uden at skulle ændre logik i vores services. Samtidig bidrager det til at holde vores domæneklasser rene og fri for datalagringslogik. Vi introducerede nu interfacet, `IRepository<T>`, fordi vi havde flere repositories med ens funktionalitet - de læser json-filerne og deserialiserer dem til objekter. For at undgå gentagelse oprettede vi den abstrakte `FileHandler`-klasse, som de tre konkrete repositories nedarver fra. Til at starte med implementerede vi en superklasse, `BaseVehicleRepository`, som `CarRepository` og `BikeRepository` nedarvede fra. Den blev introduceret for at samle fælles funktionalitet for transportmidler, mens selve polymorfien blev håndteret gennem `IVehicleProvider`, hvor konkrete typer blev opcastet til `IVehicle`. Med introduktionen af interfacet, `IVehicleProvider`, blev ansvaret flyttet væk fra superklassen, da det var interfacet, som `VehicleService` afhang af. Vores base-klasse gjorde det dog stadig muligt at genbruge logik mellem repositories.
+I vores første iteration af projektet var udgangspunktet #link(<UC2>, underline[UC2]) (Se ledige transportmidler for et bestemt tidspunkt). For at kunne estimere implementeringen mere præcist, foldede vi den ud, så den blev flere mindre tasks. Vi oprettede domæneklasser for Car, Bike og Employee og dertilhørende JSON-filer. For at sikre en så fleksibel og vedligeholdelsesvenlig arkitektur som muligt, valgte vi at implementere et repository pattern. Formålet var at abstrahere dataadgangen, så servicelaget ikke har direkte afhængighed til datakilden. Repositories kan virke overflødige i vores indtil nu simple system, men gør det skalerbart til en fremtidig database som datakilde uden at skulle ændre logik i vores services. Samtidig bidrager det til at holde vores domæneklasser rene og fri for datalagringslogik. Vi introducerede nu interfacet, `IRepository<T>`, fordi vi havde flere repositories med ens funktionalitet - de læser json-filerne og deserialiserer dem til objekter. For at undgå gentagelse oprettede vi den abstrakte `FileHandler`-klasse, som de tre konkrete repositories nedarver fra. Til at starte med implementerede vi en superklasse, `BaseVehicleRepository`, som `CarRepository` og `BikeRepository` nedarvede fra. Den blev introduceret for at samle fælles funktionalitet for transportmidler, mens selve polymorfien blev håndteret gennem `IVehicleProvider`, hvor konkrete typer blev opcastet til `IVehicle`. Med introduktionen af interfacet, `IVehicleProvider`, blev ansvaret flyttet væk fra superklassen, da det var interfacet, som `VehicleService` afhang af. Vores base-klasse gjorde det dog stadig muligt at genbruge logik mellem repositories.
 ```cs
 public interface IVehicleProvider
 {
@@ -43,7 +41,7 @@ public class CompositeVehicleProvider : IVehicleProvider
 
 Efter implementeringen af kovarians blev det muligt at generalisere vores composite pattern og skabe `CompositeRepository<T>` som en generisk løsning. Med kovarians `<out T>` i `IRepository<T>` blev det muligt at behandle repositories af specifikke typer, Bike og Car, som repositories af deres fælles supertype `IVehicle`. Med denne vigtige ændring blev designet åbent for nye samlinger af repositories i senere iterationer. Det betyder, at compileren nu tillader, at `IRepository<Car>` og `IRepository<Bike>`, samt alle fremtidige transportmidler, der implementerer IVehicle, kan behandles som `IRepository<IVehicle>`, og samtidig risikerer vi ikke, at vores employees bliver behandlet som transportmidler, fordi de ikke er en del af samme typehierarki.
 
-Med indførelsen af kovarians kunne vi fjerne `IVehicleProvider` og `BaseVehicleRepository` og erstatte dem med en generisk `CompositeRepository<T>`. Refaktoringen til kovarians gjorde samtidig metoden `LoadVehicles()` overflødig, da behovet for runtime-casting til `IVehicle` blev erstattet af compile-time kontrol. Metoden var `BaseVehicleRepository`'s eneste ansvar - derfor kunne klassen fjernes.
+For at tydeliggøre den tekniske pointe: udfordringen var ikke almindelig polymorfi alene, men generisk invarians. `Car` kan godt bruges som `IVehicle`, men uden kovarians kan `IRepository<Car>` ikke bruges som `IRepository<IVehicle>`. Med `out T` kan interfacet bruges kovariant, fordi `IRepository<T>` kun producerer værdier via `Load()`. Dermed kan vi både aggregere repositories i en fælles struktur og samtidig bevare stærk typning i `FileHandler<T>`-implementeringen af `Load()`.
 
 ```cs
 public interface IRepository<out T>
@@ -51,6 +49,48 @@ public interface IRepository<out T>
     IEnumerable<T> Load();
 }
 
+// Generisk file handler med stærk type i Load()
+public abstract class FileHandler<T> : IRepository<T>
+{
+    private readonly string _path;
+
+    protected FileHandler(string path) => _path = path;
+
+    public IEnumerable<T> Load()
+    {
+        var text = File.ReadAllText(_path);
+
+        // Stærk typning bevares her:
+        // CarRepository -> List<Car> og BikeRepository -> List<Bike>
+        return JsonSerializer.Deserialize<List<T>>(text)!;
+    }
+}
+
+public sealed class CarRepository : FileHandler<Car>
+{
+    public CarRepository(string path) : base(path) { }
+}
+
+public sealed class BikeRepository : FileHandler<Bike>
+{
+    public BikeRepository(string path) : base(path) { }
+}
+
+// Kovarians gør det lovligt at IRepository<Car>
+// og IRepository<Bike> kan opkastes til IRepository<IVehicle>
+IEnumerable<IRepository<IVehicle>> repos =
+[
+    new CarRepository("Data\\Car.json"),
+    new BikeRepository("Data\\Bike.json")
+];
+
+var composite = new CompositeRepository<IVehicle>(repos);
+```
+
+Den tekniske egenskab gjorde samtidig en vigtig refaktorering mulig. Med kovarians kunne vi fjerne `IVehicleProvider` og `BaseVehicleRepository` og lade `VehicleService` afhænge direkte af `IRepository<IVehicle>`. Dermed blev `LoadVehicles()` overflødig, fordi behovet for runtime-casting til `IVehicle` blev erstattet af compile-time kontrol.
+
+```cs
+// CompositeRepository<T> - generisk composite pattern
 public class CompositeRepository<T> : IRepository<T>
 {
     private readonly IEnumerable<IRepository<T>> _repositories;
@@ -66,6 +106,7 @@ public class CompositeRepository<T> : IRepository<T>
     }
 }
 
+// VehicleService afhænger nu af IRepository<IVehicle>
 public class VehicleService
 {
     private readonly IRepository<IVehicle> _repository;
