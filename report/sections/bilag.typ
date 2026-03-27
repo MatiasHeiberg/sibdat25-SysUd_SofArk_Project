@@ -52,4 +52,9 @@
 == Burndown Chart <bilag:BurndownChart>
 #include "../bilag/BurndownChart.typ"
 
+#pagebreak()
+== Klassegiagrammer <bilag:classDiagrams>
+#include "../bilag/ClassDiagrams.typ"
+
+
 <bilag-end>
