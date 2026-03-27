@@ -100,10 +100,28 @@
     )
     #v(2fr)
 
+    // Build date explicitly in Danish to avoid locale differences.
+    #let today = datetime.today()
+    #let da-months = (
+      "januar",
+      "februar",
+      "marts",
+      "april",
+      "maj",
+      "juni",
+      "juli",
+      "august",
+      "september",
+      "oktober",
+      "november",
+      "december",
+    )
+    #let today-da = str(today.day()) + ". " + da-months.at(today.month() - 1) + " " + str(today.year())
+
     // Semester info
     Teknisk Rapport \
     Datamatiker uddannelsen \
-    #datetime.today().display("[day]. [month repr:long] [year]") \
+    #today-da \
     #link("https://github.com/MatiasHeiberg/sibdat25-SysUd_SofArk_Project", underline[*GitHub*])
 
 
