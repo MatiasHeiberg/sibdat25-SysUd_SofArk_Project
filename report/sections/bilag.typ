@@ -53,7 +53,7 @@
 #include "../bilag/BurndownChart.typ"
 
 #pagebreak()
-== Klassegiagrammer <bilag:classDiagrams>
+== Klassediagrammer <bilag:classDiagrams>
 #include "../bilag/ClassDiagrams.typ"
 
 
