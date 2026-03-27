@@ -1,3 +1,5 @@
+#import "../../template.typ": target-width
+
 I vores første iteration af projektet var udgangspunktet #link(<UC2>, underline[UC2]) (Se ledige transportmidler for et bestemt tidspunkt). For at kunne estimere implementeringen mere præcist foldede vi den ud, så den blev til flere mindre tasks. Vi oprettede domæneklasser for Car, Bike og Employee samt dertilhørende JSON-filer. For at sikre en så fleksibel og vedligeholdelsesvenlig arkitektur som muligt, valgte vi at implementere et repository pattern. Formålet var at abstrahere dataadgangen, så servicelaget ikke er direkte afhængigt af datakilden. Repositories kan virke overflødige i vores indtil nu simple system, men gør det skalerbart til en fremtidig database som datakilde uden at skulle ændre logik i vores services. Samtidig bidrager det til at holde vores domæneklasser rene og fri for datalagringslogik. Vi introducerede nu interfacet `IRepository<T>`, fordi vi havde flere repositories med ens funktionalitet - de læser JSON-filerne og deserialiserer dem til objekter. For at undgå gentagelse oprettede vi den abstrakte `FileHandler`-klasse, som de tre konkrete repositories nedarver fra. Til at starte med implementerede vi en superklasse `BaseVehicleRepository`, som `CarRepository` og `BikeRepository` nedarvede fra. Den blev introduceret for at samle fælles funktionalitet for transportmidler, mens selve polymorfien blev håndteret gennem `IVehicleProvider`, hvor konkrete typer blev opcastet til `IVehicle`. Med introduktionen af interfacet `IVehicleProvider` blev ansvaret flyttet væk fra superklassen, da det var interfacet, som `VehicleService` afhang af. Vores base-klasse gjorde det dog stadig muligt at genbruge logik mellem repositories.
 ```cs
 public interface IVehicleProvider
@@ -121,5 +123,15 @@ public class VehicleService
     }
 }
 ```
+
+
+
+#figure(
+  image(
+    "../../assets/Klassediagrammer/Klassediagram (Composite).png",
+    width: target-width,
+  ),
+  caption: [Klassediagram - Composite Pattern],
+)
 
 Det ender med at give os et generisk Composite Pattern, hvor servicelaget kan hente alle objekter af en type uden at have kendskab til konkrete repository-implementationer.
