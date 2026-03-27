@@ -5,6 +5,9 @@ using System.Text;
 
 namespace KoordineringsApp.Domain
 {
+    /// <summary>
+    /// Repræsenterer en medarbejder i domænemodellen.
+    /// </summary>
     public class Employee
     {
         public string Name { get; set; }

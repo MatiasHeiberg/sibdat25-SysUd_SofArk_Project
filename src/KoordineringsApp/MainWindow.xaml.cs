@@ -13,11 +13,16 @@ using System.Windows.Shapes;
 namespace KoordineringsApp
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Applikationens hovedvindue.
     /// </summary>
     public partial class MainWindow : Window
     {
         private readonly AppFacade _facade;
+
+        /// <summary>
+        /// Initialiserer hovedvinduet og binder køretøjsdata.
+        /// </summary>
+        /// <param name="facade">Facade der giver adgang til applikationens use cases.</param>
         public MainWindow(AppFacade facade)
         {
             InitializeComponent();

@@ -9,10 +9,13 @@ using System.Windows;
 namespace KoordineringsApp
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// Starter applikationen og sammensætter afhængigheder ved opstart.
     /// </summary>
     public partial class App : Application
     {
+        /// <summary>
+        /// Konfigurerer repositories, services og hovedvinduet ved opstart.
+        /// </summary>
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
