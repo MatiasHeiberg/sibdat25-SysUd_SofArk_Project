@@ -1,3 +1,4 @@
+#import "../template.typ": target-width
 == Faktiske iterationsstruktur
 Den oprindelige plan bestod af tre iterationer, hvor hver iteration tog udgangspunkt i én use case opdelt i konkrete tasks. Det viste sig hurtigt, at vores første planlagte iteration (UC2: Se ledige transportmidler) indeholdt væsentligt mere kompleksitet end forventet og ikke kunne gennemføres med en to-dages iteration.
 
@@ -11,7 +12,15 @@ De definerede tasks varierede både i kompleksitet og detaljegrad. Selvom de mes
 
 Vi prioriterede derfor de mest håndgribelige tasks: "Brugerdata" og "Håndter data for transportmidler". Disse tasks, som oprindeligt var estimeret til 2 story points hver, kom reelt til at udgøre hovedparten af iterationen.
 
-Implementeringen af bruger- og køretøjsdata dækkede reelt over et helt lag af beslutninger - heriblandt filformat, serialisering, repository-pattern og interfacedesign. Som følge heraf blev selve implementeringen først påbegyndt d. 17. marts, efter vi havde fastlagt en lagdelt arkitektur bestående af domæne-, IO- og Servicelag.
+Implementeringen af bruger- og køretøjsdata dækkede reelt over et helt lag af beslutninger - heriblandt filformat, serialisering, repository-pattern og interfacedesign. Som følge heraf blev selve implementeringen først påbegyndt d. 17. marts, efter vi havde fastlagt en lagdelt arkitektur bestående af domæne-, IO- og Servicelag. Det resulterede i følgende klassediagram:
+
+#figure(
+  image(
+    "../assets/Klassediagrammer/Klassediagram v1.png",
+    width: target-width,
+  ),
+  caption: [Første analyse klassediagram],
+)
 
 Den efterfølgende task, "Se ledige køretøjer", blev påbegyndt med henblik på at indrage præsentationslaget. Tasken var estimeret til 8 story points, men blev kun delvist implementeret inden for iterationen. Vi besluttede derfor at lade denne task fortsætte ind i næste iteration.
 
@@ -25,5 +34,5 @@ Refaktoreringen resulterede dog i et mere generisk og genanvendeligt design. Eks
 
 Mandag d. 23 marts blev WPF-delen færdiggjort for tasken, og der blev implementeret en AppFacade for at skjule vores servicelag bag en samlet grænseflade samt oprettelse af DI-root'en.
 
-Forløbet synliggjorde udfordringerne ved at følge UP i en begrænset tidsramme, særligt når der samtidig er fokus på implementering af design patterns og arkitektur generelt. Dertil kommer læringsbyrden, der naturligt medfølger, da de fleste af de principper, begreber og teknikker er nye for os og skal læres sideløbende. På baggrund af dette besluttede vi i slutningen af iteration 2 at reducere vores fokus på den planlagte proces og sikre implementeringen af design pattern.
+Forløbet synliggjorde udfordringerne ved at følge UP i en begrænset tidsramme, særligt når der samtidig er fokus på implementering af design patterns og arkitektur generelt. Dertil kommer læringsbyrden, der naturligt medfølger, da de fleste af de principper, begreber og teknikker er nye for os og skal læres sideløbende. På baggrund af dette besluttede vi i slutningen af iteration 2 at reducere vores fokus på den planlagte proces og sikre implementeringen af design patterns.
 
